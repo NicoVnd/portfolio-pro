@@ -11,9 +11,21 @@ const Hero = () => {
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[300px] rounded-full bg-indigo-600/10 blur-[100px]"></div>
       </div>
 
+      {/* Profile Photo */}
+      <div className="relative mb-8 group">
+        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-gray-900 shadow-2xl shadow-indigo-500/25">
+          <img
+            src="/profile.jpg"
+            alt="Nicolas Vandamme"
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+        </div>
+      </div>
+
       {/* Badge */}
       <span className="px-5 py-2 rounded-full text-sm font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-8 backdrop-blur-sm">
-        Ambition : Développeur Fullstack 🚀
+        Ambition : Devenir Développeur Fullstack 🚀
       </span>
 
       {/* Main heading */}
@@ -38,7 +50,7 @@ const Hero = () => {
           Me contacter
         </a>
         <a
-          href="/CV_VANDAMME_Nicolas.pdf"
+          href="/cv_vandamme_nicolas.pdf"
           target="_blank"
           className="px-8 py-4 bg-gray-800/50 text-white font-semibold rounded-xl border border-gray-700 hover:bg-gray-800 hover:border-gray-600 hover:scale-105 transition-all duration-300 backdrop-blur-sm"
         >

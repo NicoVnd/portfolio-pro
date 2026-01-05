@@ -66,6 +66,20 @@ const Experience = () => {
               </div>
             </div>
           ))}
+
+          {/* Starting point bubble */}
+          <div className="relative mt-16 flex justify-center md:justify-center">
+            <div className="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-[0_0_25px_rgba(37,99,235,0.5)] border-4 border-gray-950 z-10">
+                <span className="text-white text-lg">🚀</span>
+              </div>
+              <div className="mt-3 px-4 py-2 bg-gray-900/80 rounded-xl border border-blue-500/30 backdrop-blur-sm">
+                <span className="text-sm font-medium text-blue-400 whitespace-nowrap">
+                  Début de mon parcours
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
