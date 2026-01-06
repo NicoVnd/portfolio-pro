@@ -3,17 +3,17 @@ import { ME } from "../constants/data";
 
 const Contact = () => {
   return (
-    <section id="contact" className="w-full py-24 bg-gray-950">
+    <section id="contact" className="w-full py-24 bg-slate-50 dark:bg-gray-950">
       <div className="container mx-auto px-6">
         {/* Section header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Contact
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
         </div>
 
-        <div className="max-w-5xl mx-auto bg-gray-900/50 border border-gray-800 rounded-3xl overflow-hidden backdrop-blur-sm">
+        <div className="max-w-5xl mx-auto bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden backdrop-blur-sm">
           <div className="flex flex-col md:flex-row">
             {/* Infos de contact (Gauche) */}
             <div className="md:w-1/3 p-10 bg-gradient-to-br from-blue-600 to-indigo-600 text-white">
@@ -86,47 +86,47 @@ const Contact = () => {
             </div>
 
             {/* Formulaire (Droite) */}
-            <div className="md:w-2/3 p-10 bg-gray-900">
+            <div className="md:w-2/3 p-10 bg-gray-50 dark:bg-gray-900">
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">
+                    <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
                       Nom complet
                     </label>
                     <input
                       type="text"
-                      className="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                      className="w-full bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                       placeholder="Jean Dupont"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">
+                    <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
                       Email
                     </label>
                     <input
                       type="email"
-                      className="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                      className="w-full bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                       placeholder="jean@exemple.com"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2">
+                  <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
                     Sujet
                   </label>
                   <input
                     type="text"
-                    className="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                    className="w-full bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                     placeholder="Offre d'emploi / Projet"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2">
+                  <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
                     Message
                   </label>
                   <textarea
                     rows={5}
-                    className="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none"
+                    className="w-full bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none"
                     placeholder="Votre message ici..."
                   ></textarea>
                 </div>
