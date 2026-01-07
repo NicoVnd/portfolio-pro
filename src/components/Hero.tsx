@@ -72,9 +72,9 @@ const Hero = () => {
         </a>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - hidden on mobile */}
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500 animate-fadeInUp delay-700"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500 animate-fadeInUp delay-700"
         style={{ opacity: 0, animationFillMode: "forwards" }}
       >
         <span className="text-xs uppercase tracking-widest">Scroll</span>

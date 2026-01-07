@@ -24,19 +24,19 @@ const typeLabels: Record<string, { label: string; class: string }> = {
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const { ref, isInView } = useInView<HTMLElement>({ threshold: 0.2 });
+  const { ref, isInView } = useInView<HTMLElement>({ threshold: 0.05 });
 
   return (
     <>
       <section
         ref={ref}
         id="projects"
-        className="w-full py-24 bg-gray-100/50 dark:bg-gray-900/30"
+        className="w-full py-12 md:py-24 bg-gray-100/50 dark:bg-gray-900/30"
       >
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 md:px-6">
           {/* Section header */}
           <div
-            className={`text-center mb-16 ${
+            className={`text-center mb-10 md:mb-16 ${
               isInView ? "animate-fadeInUp" : "opacity-0"
             }`}
           >
@@ -61,7 +61,6 @@ export default function Projects() {
                 }`}
                 style={{
                   animationDelay: isInView ? `${(index + 1) * 100}ms` : "0ms",
-                  opacity: 0,
                   animationFillMode: "forwards",
                 }}
               >

@@ -61,12 +61,12 @@ const ContactForm = () => {
     <section
       ref={ref}
       id="contact"
-      className="w-full py-24 bg-slate-50 dark:bg-gray-950"
+      className="w-full py-12 md:py-24 bg-slate-50 dark:bg-gray-950"
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 md:px-6">
         {/* Section header */}
         <div
-          className={`text-center mb-16 ${
+          className={`text-center mb-10 md:mb-16 ${
             isInView ? "animate-fadeInUp" : "opacity-0"
           }`}
         >
