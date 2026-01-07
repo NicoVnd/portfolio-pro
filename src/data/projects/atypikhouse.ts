@@ -32,7 +32,7 @@ Le site propose une expérience utilisateur complète avec un système de recher
   github: "https://github.com/0xbwill/atypik-house",
   demo: null,
   image: "/projects/atypikhouse.png",
-  imagePosition: "top",
+  imagePosition: "contain",
   gallery: [],
   teamSize: 4,
   duration: "6 mois",
