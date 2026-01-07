@@ -98,11 +98,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         <div className="overflow-y-auto max-h-[90vh]">
           {/* Image carousel */}
           {allImages.length > 0 && (
-            <div className="relative h-64 md:h-80 bg-gray-100 dark:bg-gray-800">
+            <div className="relative h-48 sm:h-64 md:h-80 bg-gray-100 dark:bg-gray-800">
               <img
                 src={allImages[currentImageIndex]}
                 alt={`${project.title} - Image ${currentImageIndex + 1}`}
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-center"
               />
 
               {/* Image navigation */}
