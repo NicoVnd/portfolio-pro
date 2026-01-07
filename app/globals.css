@@ -64,3 +64,8 @@ html {
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #4b5563;
 }
+
+/* Hide reCAPTCHA badge - Required text attribution is in the form */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
