@@ -1,5 +1,5 @@
 import React from "react";
-import { TIMELINE } from "@/constants/data";
+import { TIMELINE } from "@/data/timeline";
 
 const Experience = () => {
   return (

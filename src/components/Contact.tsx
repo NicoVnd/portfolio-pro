@@ -1,5 +1,5 @@
 import React from "react";
-import { ME } from "../constants/data";
+import { ME } from "@/data/profile";
 
 const Contact = () => {
   return (

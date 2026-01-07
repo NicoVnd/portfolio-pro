@@ -95,17 +95,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </svg>
         </button>
 
-        {/* Logo in top right */}
-        {project.logo && (
-          <div className="absolute top-4 right-16 z-10">
-            <img
-              src={project.logo}
-              alt={`Logo ${project.title}`}
-              className="w-14 h-14 object-contain bg-white/90 dark:bg-white rounded-xl p-1.5 shadow-lg"
-            />
-          </div>
-        )}
-
         <div className="overflow-y-auto max-h-[90vh]">
           {/* Image carousel */}
           {allImages.length > 0 && (
@@ -212,9 +201,18 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               )}
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              {project.title}
-            </h2>
+            <div className="flex items-center gap-4 mb-4">
+              {project.logo && (
+                <img
+                  src={project.logo}
+                  alt={`Logo ${project.title}`}
+                  className="w-12 h-12 object-contain bg-white rounded-xl p-1.5 shadow-md"
+                />
+              )}
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
+                {project.title}
+              </h2>
+            </div>
 
             {/* Full description */}
             <div className="prose prose-gray dark:prose-invert max-w-none mb-6">

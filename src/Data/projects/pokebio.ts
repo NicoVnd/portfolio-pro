@@ -32,4 +32,5 @@ En tant que développeur (nous étions 2), j'ai travaillé sur l'intégration du
   gallery: [],
   teamSize: 6,
   duration: "5 jours",
+  logo: "/projects/logo-pokebio.png",
 };

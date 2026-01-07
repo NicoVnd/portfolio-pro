@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ME } from "@/constants/data";
+import { ME } from "@/data/profile";
 import { useTheme } from "./ThemeProvider";
 
 const navLinks = [

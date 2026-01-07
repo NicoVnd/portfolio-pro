@@ -35,4 +35,5 @@ Le site propose une expérience utilisateur complète avec un système de recher
   gallery: [],
   teamSize: 4,
   duration: "6 mois",
+  logo: "/projects/logo-atypikhouse.png",
 };

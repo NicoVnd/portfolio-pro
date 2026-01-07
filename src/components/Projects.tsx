@@ -65,7 +65,7 @@ export default function Projects() {
                       <img
                         src={project.logo}
                         alt={`Logo ${project.title}`}
-                        className="w-10 h-10 object-contain rounded-lg dark:bg-white dark:border-gray-200 dark:border-2"
+                        className="w-10 h-10 object-contain rounded-lg dark:bg-white dark:border-gray-200 dark:border-1"
                       />
                     ) : !project.demo ? (
                       <span className="text-xs text-gray-400 dark:text-gray-600 italic">
