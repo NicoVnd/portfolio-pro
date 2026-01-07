@@ -11,7 +11,7 @@ En équipe de 6 personnes, nous avons créé en seulement 5 jours le site web d'
 
 En tant que développeur (nous étions 2), j'ai travaillé sur l'intégration du site sous WordPress avec ACF (Advanced Custom Fields) pour permettre une gestion de contenu flexible et intuitive pour le client.`,
   type: "school",
-  tags: ["WordPress", "ACF", "PHP", "JavaScript", "SCSS"],
+  tags: ["WordPress", "ACF", "PHP", "JavaScript", "SCSS", "WooCommerce"],
   learned: [
     "Travail pluridisciplinaire (graphistes, marketing, dev)",
     "WordPress avec ACF",

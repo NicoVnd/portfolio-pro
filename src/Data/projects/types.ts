@@ -14,4 +14,5 @@ export interface Project {
   teamSize?: number;
   duration?: string;
   logo?: string;
+  status?: string;
 }
