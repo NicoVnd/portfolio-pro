@@ -15,4 +15,5 @@ export interface Project {
   duration?: string;
   logo?: string;
   status?: string;
+  imagePosition?: "cover" | "contain" | "top" | "bottom";
 }

@@ -144,7 +144,15 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               <img
                 src={allImages[currentImageIndex]}
                 alt={`${project.title} - Image ${currentImageIndex + 1}`}
-                className="w-full h-full object-cover object-center"
+                className={`w-full h-full object-cover ${
+                  project.imagePosition === "top"
+                    ? "object-top"
+                    : project.imagePosition === "bottom"
+                    ? "object-bottom"
+                    : project.imagePosition === "contain"
+                    ? "object-contain"
+                    : "object-center"
+                }`}
               />
 
               {/* Image navigation */}
