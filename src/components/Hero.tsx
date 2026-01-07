@@ -14,7 +14,7 @@ const Hero = () => {
       </div>
 
       {/* Profile Photo */}
-      <div className="relative mb-8 group animate-scaleIn">
+      <div className="relative mb-6 md:mb-8 group animate-scaleIn">
         <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white dark:border-gray-900 shadow-2xl shadow-indigo-500/25">
           <img
@@ -35,7 +35,7 @@ const Hero = () => {
 
       {/* Main heading */}
       <h1
-        className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-6 animate-fadeInUp delay-200"
+        className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-6 animate-fadeInUp delay-200"
         style={{ opacity: 0, animationFillMode: "forwards" }}
       >
         Salut, moi c'est{" "}

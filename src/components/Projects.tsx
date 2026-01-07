@@ -105,7 +105,7 @@ export default function Projects() {
                     {project.learned.slice(0, 3).map((item, i) => (
                       <span
                         key={i}
-                        className="text-xs text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800/50 px-2 py-1 rounded"
+                        className="text-[10px] md:text-xs text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800/50 px-2 py-1 rounded"
                       >
                         {item}
                       </span>
@@ -128,7 +128,7 @@ export default function Projects() {
                   </div>
 
                   {/* Actions */}
-                  <div className="flex gap-3">
+                  <div className="flex gap-3 w-full">
                     {project.github && (
                       <a
                         href={project.github}
@@ -147,11 +147,7 @@ export default function Projects() {
                         Voir le code
                       </a>
                     )}
-                    <button
-                      className={`py-2.5 px-4 bg-blue-500/10 hover:bg-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-medium rounded-lg transition-colors flex items-center justify-center gap-2 ${
-                        !project.github ? "flex-1" : ""
-                      }`}
-                    >
+                    <button className="flex-1 py-2.5 px-4 bg-blue-500/10 hover:bg-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-medium rounded-lg transition-colors flex items-center justify-center gap-2">
                       Détails
                       <svg
                         className="w-4 h-4"

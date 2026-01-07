@@ -88,7 +88,7 @@ const ContactForm = () => {
         >
           <div className="flex flex-col md:flex-row">
             {/* Infos de contact (Gauche) */}
-            <div className="md:w-1/3 p-10 bg-gradient-to-br from-blue-600 to-indigo-600 text-white">
+            <div className="md:w-1/3 p-10 pt-12 md:pt-10 bg-gradient-to-br from-blue-600 to-indigo-600 text-white">
               <h3 className="text-2xl font-bold mb-4">
                 Discutons de votre projet
               </h3>

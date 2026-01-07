@@ -29,7 +29,7 @@ const Experience = () => {
         {/* Timeline */}
         <div className="relative max-w-5xl mx-auto py-8">
           {/* Central line */}
-          <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 via-indigo-500 to-gray-300 dark:to-gray-800 rounded-full"></div>
+          <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 via-indigo-500 to-gray-300 dark:to-gray-800 rounded-full"></div>
 
           {TIMELINE.map((item, index) => (
             <div
@@ -40,7 +40,7 @@ const Experience = () => {
             >
               {/* Point on the line */}
               <div
-                className={`absolute left-6 md:left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-blue-600 border-4 border-white dark:border-gray-950 z-10 shadow-[0_0_15px_rgba(37,99,235,0.6)] ${
+                className={`absolute left-8 md:left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-blue-600 border-4 border-white dark:border-gray-950 z-10 shadow-[0_0_15px_rgba(37,99,235,0.6)] ${
                   isInView ? "animate-scaleIn" : "opacity-0"
                 }`}
                 style={{
@@ -66,7 +66,7 @@ const Experience = () => {
                 }}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm font-mono text-blue-600 dark:text-blue-400 uppercase tracking-widest">
+                  <span className="text-xs md:text-sm font-mono text-blue-600 dark:text-blue-400 uppercase tracking-widest">
                     {item.period}
                   </span>
                   <span
@@ -105,7 +105,7 @@ const Experience = () => {
           {/* Starting point bubble */}
           <div className="relative mt-16 flex justify-center md:justify-center">
             <div
-              className={`absolute left-6 md:left-1/2 transform -translate-x-1/2 flex flex-col items-center ${
+              className={`absolute left-8 md:left-1/2 transform -translate-x-1/2 flex flex-col items-center ${
                 isInView ? "animate-scaleIn" : "opacity-0"
               }`}
               style={{

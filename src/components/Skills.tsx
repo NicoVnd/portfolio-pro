@@ -60,7 +60,7 @@ const Skills = () => {
               </p>
 
               {/* Tech badges */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap justify-center md:justify-start gap-2">
                 {skill.techs.map((tech, techIndex) => (
                   <span
                     key={techIndex}
