@@ -1,15 +1,25 @@
+"use client";
+
 import React from "react";
 import { SKILLS } from "@/data/skills";
+import { useInView } from "@/hooks/useInView";
 
 const Skills = () => {
+  const { ref, isInView } = useInView<HTMLElement>({ threshold: 0.1 });
+
   return (
     <section
+      ref={ref}
       id="skills"
       className="w-full py-24 bg-gray-100/50 dark:bg-gray-900/30"
     >
       <div className="container mx-auto px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div
+          className={`text-center mb-16 ${
+            isInView ? "animate-fadeInUp" : "opacity-0"
+          }`}
+        >
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Mes Compétences
           </h2>
@@ -25,7 +35,14 @@ const Skills = () => {
           {SKILLS.map((skill, index) => (
             <div
               key={index}
-              className="p-8 bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group backdrop-blur-sm"
+              className={`p-8 bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group backdrop-blur-sm ${
+                isInView ? "animate-fadeInUp" : "opacity-0"
+              }`}
+              style={{
+                animationDelay: isInView ? `${(index + 1) * 100}ms` : "0ms",
+                opacity: 0,
+                animationFillMode: "forwards",
+              }}
             >
               {/* Icon */}
               <div className="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300">

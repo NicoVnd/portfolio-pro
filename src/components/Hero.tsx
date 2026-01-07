@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { ME } from "@/data/profile";
 
@@ -12,7 +14,7 @@ const Hero = () => {
       </div>
 
       {/* Profile Photo */}
-      <div className="relative mb-8 group">
+      <div className="relative mb-8 group animate-scaleIn">
         <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white dark:border-gray-900 shadow-2xl shadow-indigo-500/25">
           <img
@@ -24,12 +26,18 @@ const Hero = () => {
       </div>
 
       {/* Badge */}
-      <span className="px-5 py-2 rounded-full text-sm font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 mb-8 backdrop-blur-sm">
+      <span
+        className="px-5 py-2 rounded-full text-sm font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 mb-8 backdrop-blur-sm animate-fadeInUp delay-100"
+        style={{ opacity: 0, animationFillMode: "forwards" }}
+      >
         Ambition : Devenir Développeur Fullstack 🚀
       </span>
 
       {/* Main heading */}
-      <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-6">
+      <h1
+        className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-6 animate-fadeInUp delay-200"
+        style={{ opacity: 0, animationFillMode: "forwards" }}
+      >
         Salut, moi c'est{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500">
           {ME.name}
@@ -37,12 +45,18 @@ const Hero = () => {
       </h1>
 
       {/* Bio */}
-      <p className="max-w-2xl text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 leading-relaxed">
+      <p
+        className="max-w-2xl text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 leading-relaxed animate-fadeInUp delay-300"
+        style={{ opacity: 0, animationFillMode: "forwards" }}
+      >
         {ME.bio}
       </p>
 
       {/* CTA Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div
+        className="flex flex-col sm:flex-row gap-4 animate-fadeInUp delay-400"
+        style={{ opacity: 0, animationFillMode: "forwards" }}
+      >
         <a
           href="#contact"
           className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-500 hover:to-indigo-500 hover:scale-105 transition-all duration-300 shadow-lg shadow-blue-500/25"
@@ -59,7 +73,10 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500">
+      <div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500 animate-fadeInUp delay-700"
+        style={{ opacity: 0, animationFillMode: "forwards" }}
+      >
         <span className="text-xs uppercase tracking-widest">Scroll</span>
         <div className="w-5 h-8 border-2 border-gray-300 dark:border-gray-600 rounded-full flex justify-center pt-2">
           <div className="w-1 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce"></div>

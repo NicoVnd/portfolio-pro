@@ -14,9 +14,11 @@ const navLinks = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
+    setIsLoaded(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -30,7 +32,7 @@ export default function Navbar() {
         isScrolled
           ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800/50 py-4"
           : "bg-transparent py-6"
-      }`}
+      } ${isLoaded ? "animate-fadeInDown" : "opacity-0"}`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}

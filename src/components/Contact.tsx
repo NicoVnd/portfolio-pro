@@ -6,6 +6,7 @@ import {
   useGoogleReCaptcha,
 } from "react-google-recaptcha-v3";
 import { ME } from "@/data/profile";
+import { useInView } from "@/hooks/useInView";
 
 const RECAPTCHA_SITE_KEY = "6LenCEMsAAAAAOqWp3u27hN2LKyCGqprXvRsih7x";
 
@@ -15,6 +16,7 @@ const ContactForm = () => {
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const { executeRecaptcha } = useGoogleReCaptcha();
+  const { ref, isInView } = useInView<HTMLElement>({ threshold: 0.1 });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -56,17 +58,34 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="w-full py-24 bg-slate-50 dark:bg-gray-950">
+    <section
+      ref={ref}
+      id="contact"
+      className="w-full py-24 bg-slate-50 dark:bg-gray-950"
+    >
       <div className="container mx-auto px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div
+          className={`text-center mb-16 ${
+            isInView ? "animate-fadeInUp" : "opacity-0"
+          }`}
+        >
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Contact
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
         </div>
 
-        <div className="max-w-5xl mx-auto bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden backdrop-blur-sm">
+        <div
+          className={`max-w-5xl mx-auto bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden backdrop-blur-sm ${
+            isInView ? "animate-fadeInUp" : "opacity-0"
+          }`}
+          style={{
+            animationDelay: isInView ? "150ms" : "0ms",
+            opacity: 0,
+            animationFillMode: "forwards",
+          }}
+        >
           <div className="flex flex-col md:flex-row">
             {/* Infos de contact (Gauche) */}
             <div className="md:w-1/3 p-10 bg-gradient-to-br from-blue-600 to-indigo-600 text-white">
@@ -94,7 +113,9 @@ const ContactForm = () => {
                   <p className="text-sm text-blue-200 uppercase tracking-widest font-semibold mb-1">
                     Localisation
                   </p>
-                  <p className="text-lg">Villeneuve d'Ascq, Lille & Amiens</p>
+                  <p className="text-lg">
+                    Villeneuve d'Ascq, Lille &amp; Amiens
+                  </p>
                 </div>
               </div>
 
@@ -274,7 +295,7 @@ const ContactForm = () => {
                     >
                       Confidentialité
                     </a>{" "}
-                    &{" "}
+                    &amp;{" "}
                     <a
                       href="https://policies.google.com/terms"
                       target="_blank"

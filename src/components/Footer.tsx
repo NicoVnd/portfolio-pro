@@ -1,7 +1,11 @@
+"use client";
+
 import { ME } from "@/data/profile";
+import { useInView } from "@/hooks/useInView";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { ref, isInView } = useInView<HTMLElement>({ threshold: 0.1 });
 
   const navLinks = [
     { name: "Accueil", href: "#" },
@@ -12,7 +16,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative w-full bg-gray-900 dark:bg-gray-950 overflow-hidden">
+    <footer
+      ref={ref}
+      className="relative w-full bg-gray-900 dark:bg-gray-950 overflow-hidden"
+    >
       {/* Wave SVG separator */}
       <div className="absolute -top-1 left-0 right-0 w-full overflow-hidden leading-none rotate-180">
         <svg
@@ -54,7 +61,11 @@ const Footer = () => {
       </div>
 
       <div className="relative container mx-auto px-6 pt-20 md:pt-28 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+        <div
+          className={`grid grid-cols-1 md:grid-cols-3 gap-10 items-start ${
+            isInView ? "animate-fadeInUp" : "opacity-0"
+          }`}
+        >
           {/* Brand & Description */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
@@ -147,14 +158,23 @@ const Footer = () => {
         <div className="my-10 h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div
+          className={`flex flex-col md:flex-row justify-between items-center gap-4 ${
+            isInView ? "animate-fadeInUp" : "opacity-0"
+          }`}
+          style={{
+            animationDelay: isInView ? "200ms" : "0ms",
+            opacity: 0,
+            animationFillMode: "forwards",
+          }}
+        >
           <p className="text-gray-500 text-sm">
             © {currentYear} {ME.name}. Tous droits réservés.
           </p>
           <p className="text-gray-600 text-sm flex items-center gap-2">
             Fait avec
             <span className="text-red-500 animate-pulse">❤️</span>
-            en utilisant Next.js & Tailwind CSS
+            en utilisant Next.js &amp; Tailwind CSS
           </p>
         </div>
       </div>

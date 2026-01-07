@@ -1,17 +1,27 @@
+"use client";
+
 import React from "react";
 import { TIMELINE } from "@/data/timeline";
+import { useInView } from "@/hooks/useInView";
 
 const Experience = () => {
+  const { ref, isInView } = useInView<HTMLElement>({ threshold: 0.15 });
+
   return (
     <section
+      ref={ref}
       id="parcours"
       className="w-full py-24 bg-slate-50 dark:bg-gray-950"
     >
       <div className="container mx-auto px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div
+          className={`text-center mb-16 ${
+            isInView ? "animate-fadeInUp" : "opacity-0"
+          }`}
+        >
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Parcours & Expériences
+            Parcours &amp; Expériences
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
         </div>
@@ -29,10 +39,32 @@ const Experience = () => {
               }`}
             >
               {/* Point on the line */}
-              <div className="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-blue-600 border-4 border-white dark:border-gray-950 z-10 shadow-[0_0_15px_rgba(37,99,235,0.6)]"></div>
+              <div
+                className={`absolute left-6 md:left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-blue-600 border-4 border-white dark:border-gray-950 z-10 shadow-[0_0_15px_rgba(37,99,235,0.6)] ${
+                  isInView ? "animate-scaleIn" : "opacity-0"
+                }`}
+                style={{
+                  animationDelay: isInView ? `${index * 150}ms` : "0ms",
+                  opacity: 0,
+                  animationFillMode: "forwards",
+                }}
+              ></div>
 
               {/* Card content */}
-              <div className="ml-16 md:ml-0 md:w-[44%] p-8 bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm hover:shadow-lg hover:shadow-blue-500/10">
+              <div
+                className={`ml-16 md:ml-0 md:w-[44%] p-8 bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm hover:shadow-lg hover:shadow-blue-500/10 ${
+                  isInView
+                    ? index % 2 === 0
+                      ? "animate-slideInRight"
+                      : "animate-slideInLeft"
+                    : "opacity-0"
+                }`}
+                style={{
+                  animationDelay: isInView ? `${index * 150 + 100}ms` : "0ms",
+                  opacity: 0,
+                  animationFillMode: "forwards",
+                }}
+              >
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-sm font-mono text-blue-600 dark:text-blue-400 uppercase tracking-widest">
                     {item.period}
@@ -72,7 +104,18 @@ const Experience = () => {
 
           {/* Starting point bubble */}
           <div className="relative mt-16 flex justify-center md:justify-center">
-            <div className="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+            <div
+              className={`absolute left-6 md:left-1/2 transform -translate-x-1/2 flex flex-col items-center ${
+                isInView ? "animate-scaleIn" : "opacity-0"
+              }`}
+              style={{
+                animationDelay: isInView
+                  ? `${TIMELINE.length * 150 + 200}ms`
+                  : "0ms",
+                opacity: 0,
+                animationFillMode: "forwards",
+              }}
+            >
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-[0_0_25px_rgba(37,99,235,0.5)] border-4 border-white dark:border-gray-950 z-10">
                 <span className="text-white text-lg">🚀</span>
               </div>

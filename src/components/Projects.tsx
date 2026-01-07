@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { PROJECTS, type Project } from "@/data/projects";
 import ProjectModal from "./ProjectModal";
+import { useInView } from "@/hooks/useInView";
 
 const typeLabels: Record<string, { label: string; class: string }> = {
   school: {
@@ -23,16 +24,22 @@ const typeLabels: Record<string, { label: string; class: string }> = {
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const { ref, isInView } = useInView<HTMLElement>({ threshold: 0.2 });
 
   return (
     <>
       <section
+        ref={ref}
         id="projects"
         className="w-full py-24 bg-gray-100/50 dark:bg-gray-900/30"
       >
         <div className="container mx-auto px-6">
           {/* Section header */}
-          <div className="text-center mb-16">
+          <div
+            className={`text-center mb-16 ${
+              isInView ? "animate-fadeInUp" : "opacity-0"
+            }`}
+          >
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Mes Projets
             </h2>
@@ -45,11 +52,18 @@ export default function Projects() {
 
           {/* Projects grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {PROJECTS.map((project) => (
+            {PROJECTS.map((project, index) => (
               <div
                 key={project.id}
                 onClick={() => setSelectedProject(project)}
-                className="group cursor-pointer bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10"
+                className={`group cursor-pointer bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 ${
+                  isInView ? "animate-fadeInUp" : "opacity-0"
+                }`}
+                style={{
+                  animationDelay: isInView ? `${(index + 1) * 100}ms` : "0ms",
+                  opacity: 0,
+                  animationFillMode: "forwards",
+                }}
               >
                 {/* Header with type badge */}
                 <div className="p-6 pb-0">
