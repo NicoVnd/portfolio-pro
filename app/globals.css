@@ -93,6 +93,44 @@ html {
   }
 }
 
+@keyframes navbarSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+    backdrop-filter: blur(0px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(0%);
+    backdrop-filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    backdrop-filter: blur(16px);
+  }
+}
+
+@keyframes navbarGlassReveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmerBorder {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 @keyframes scaleIn {
   from {
     opacity: 0;
@@ -157,11 +195,55 @@ html {
 }
 
 /* Stagger delay utilities */
-.delay-0 { animation-delay: 0ms; }
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
-.delay-700 { animation-delay: 700ms; }
+.delay-0 {
+  animation-delay: 0ms;
+}
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
+}
+.delay-600 {
+  animation-delay: 600ms;
+}
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+/* Navbar sticky animations */
+.animate-navbar-sticky {
+  animation: navbarSlideDown 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.navbar-glass-reveal {
+  animation: navbarGlassReveal 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Shimmer border effect for navbar */
+.navbar-shimmer-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.5),
+    rgba(99, 102, 241, 0.5),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmerBorder 2s ease-in-out infinite;
+}

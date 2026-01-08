@@ -160,7 +160,7 @@ const ContactForm = () => {
             </div>
 
             {/* Formulaire (Droite) */}
-            <div className="md:w-2/3 p-10 bg-gray-50 dark:bg-gray-900">
+            <div className="md:w-2/3 p-10 bg-gray-100 dark:bg-gray-900">
               {status === "success" ? (
                 <div className="h-full flex flex-col items-center justify-center text-center py-10">
                   <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-6">
