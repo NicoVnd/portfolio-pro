@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { ME } from "@/data/profile";
 
 const Hero = () => {
@@ -17,9 +18,12 @@ const Hero = () => {
       <div className="relative mb-6 md:mb-8 group animate-scaleIn">
         <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white dark:border-gray-900 shadow-2xl shadow-indigo-500/25">
-          <img
+          <Image
             src="/profile.jpg"
-            alt="Nicolas Vandamme"
+            alt="Nicolas Vandamme - Développeur Web PHP & Fullstack basé à Lille"
+            width={192}
+            height={192}
+            priority
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
         </div>

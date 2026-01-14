@@ -15,10 +15,96 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Configuration SEO
+const siteUrl = "https://nicolas-vandamme.fr";
+const siteName = "Nicolas Vandamme | Développeur Web";
+const siteDescription =
+  "Portfolio de Nicolas Vandamme, Développeur Web PHP & Futur Fullstack basé à Lille. Expert en création de sites web, applications modernes et architectures complexes. Découvrez mes projets et compétences.";
+
 export const metadata: Metadata = {
-  title: "Nicolas Vandamme | Développeur Web",
-  description:
-    "Portfolio de Nicolas Vandamme, Développeur Web PHP & Futur Fullstack basé à Lille. Découvrez mes projets et compétences.",
+  // Métadonnées de base
+  title: {
+    default: siteName,
+    template: "%s | Nicolas Vandamme",
+  },
+  description: siteDescription,
+  keywords: [
+    "Nicolas Vandamme",
+    "Développeur Web",
+    "Développeur PHP",
+    "Développeur Fullstack",
+    "Portfolio",
+    "Lille",
+    "Villeneuve d'Ascq",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Laravel",
+    "Symfony",
+    "Développeur Frontend",
+    "Développeur Backend",
+    "Création site web",
+    "Architecte Web",
+  ],
+  authors: [{ name: "Nicolas Vandamme", url: siteUrl }],
+  creator: "Nicolas Vandamme",
+  publisher: "Nicolas Vandamme",
+
+  // URL canonique
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
+
+  // Open Graph (Facebook, LinkedIn)
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: siteUrl,
+    siteName: siteName,
+    title: siteName,
+    description: siteDescription,
+    images: [
+      {
+        url: "/profile.jpg",
+        width: 800,
+        height: 800,
+        alt: "Nicolas Vandamme - Développeur Web",
+      },
+    ],
+  },
+
+  // Twitter Cards
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description: siteDescription,
+    images: ["/profile.jpg"],
+    creator: "@NicoVnd",
+  },
+
+  // Robots
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  // Icônes
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+
+  // Autres métadonnées
+  category: "technology",
+  classification: "Portfolio",
 };
 
 export default function RootLayout({
@@ -26,8 +112,66 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Données structurées JSON-LD
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Nicolas Vandamme",
+    url: siteUrl,
+    image: `${siteUrl}/profile.jpg`,
+    jobTitle: "Développeur Web PHP & Futur Fullstack",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Villeneuve d'Ascq",
+      addressRegion: "Hauts-de-France",
+      addressCountry: "FR",
+    },
+    email: "nclsvandamme@gmail.com",
+    sameAs: [
+      "https://www.linkedin.com/in/nicolas-vandamme-9444141b9/",
+      "https://github.com/NicoVnd",
+    ],
+    knowsAbout: [
+      "PHP",
+      "Laravel",
+      "Symfony",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "MySQL",
+      "PostgreSQL",
+      "Docker",
+      "Git",
+    ],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteName,
+    url: siteUrl,
+    description: siteDescription,
+    author: {
+      "@type": "Person",
+      name: "Nicolas Vandamme",
+    },
+    inLanguage: "fr-FR",
+  };
+
   return (
     <html lang="fr" className="scroll-smooth dark" suppressHydrationWarning>
+      <head>
+        {/* Données structurées JSON-LD pour SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
