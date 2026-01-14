@@ -64,7 +64,7 @@ const Hero = () => {
           Me contacter
         </a>
         <a
-          href="/cv_vandamme_nicolas.pdf"
+          href="/cv-vandamme-nicolas.pdf"
           target="_blank"
           className="px-8 py-4 bg-white dark:bg-gray-800/50 text-gray-900 dark:text-white font-semibold rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600 hover:scale-105 transition-all duration-300 backdrop-blur-sm"
         >
