@@ -30,8 +30,8 @@ export const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Nicolas Vandamme",
-  url: "https://nicolas-vandamme.fr",
-  image: "https://nicolas-vandamme.fr/profile.jpg",
+  url: "https://nicovnd-portfolio.vercel.app",
+  image: "https://nicovnd-portfolio.vercel.app/profile.jpg",
   jobTitle: "Développeur Web PHP & Futur Fullstack",
   worksFor: {
     "@type": "Organization",
@@ -71,7 +71,7 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Nicolas Vandamme | Développeur Web",
-  url: "https://nicolas-vandamme.fr",
+  url: "https://nicovnd-portfolio.vercel.app",
   description:
     "Portfolio de Nicolas Vandamme, Développeur Web PHP & Futur Fullstack basé à Lille. Expert en création de sites web, applications modernes et architectures complexes.",
   author: {
@@ -89,31 +89,31 @@ export const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Accueil",
-      item: "https://nicolas-vandamme.fr",
+      item: "https://nicovnd-portfolio.vercel.app",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Compétences",
-      item: "https://nicolas-vandamme.fr/#skills",
+      item: "https://nicovnd-portfolio.vercel.app/#skills",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Projets",
-      item: "https://nicolas-vandamme.fr/#projects",
+      item: "https://nicovnd-portfolio.vercel.app/#projects",
     },
     {
       "@type": "ListItem",
       position: 4,
       name: "Expériences",
-      item: "https://nicolas-vandamme.fr/#experiences",
+      item: "https://nicovnd-portfolio.vercel.app/#experiences",
     },
     {
       "@type": "ListItem",
       position: 5,
       name: "Contact",
-      item: "https://nicolas-vandamme.fr/#contact",
+      item: "https://nicovnd-portfolio.vercel.app/#contact",
     },
   ],
 };

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 // Configuration SEO
-const siteUrl = "https://nicolas-vandamme.fr";
+const siteUrl = "https://nicovnd-portfolio.vercel.app";
 const siteName = "Nicolas Vandamme | Développeur Web";
 const siteDescription =
   "Portfolio de Nicolas Vandamme, Développeur Web PHP & Futur Fullstack basé à Lille. Expert en création de sites web, applications modernes et architectures complexes. Découvrez mes projets et compétences.";
@@ -105,6 +105,11 @@ export const metadata: Metadata = {
   // Autres métadonnées
   category: "technology",
   classification: "Portfolio",
+
+  // Vérification Google Search Console
+  verification: {
+    google: "HydhH34Gu4kWUFX_P7TWDAdFIRpcPQzX19eC1MlrcNw",
+  },
 };
 
 export default function RootLayout({
