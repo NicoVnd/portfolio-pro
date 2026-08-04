@@ -140,90 +140,160 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         >
           {/* Image carousel */}
           {allImages.length > 0 && (
-            <div className="relative h-44 sm:h-56 md:h-80 bg-gray-100 dark:bg-gray-800">
-              <img
-                src={allImages[currentImageIndex]}
-                alt={`${project.title} - Image ${currentImageIndex + 1}`}
-                className={`w-full h-full object-cover ${
-                  project.imagePosition === "top"
-                    ? "object-top"
-                    : project.imagePosition === "bottom"
-                    ? "object-bottom"
-                    : project.imagePosition === "contain"
-                    ? "object-contain"
-                    : "object-center"
-                }`}
-              />
+            <div className={`relative bg-gray-100 dark:bg-gray-800 ${
+              project.imagePosition === "contain" ? "" : "h-44 sm:h-56 md:h-80"
+            }`}>
+              {project.imagePosition === "contain" ? (
+                /* Full-width showcase mode for website screenshots */
+                <div className="relative">
+                  <img
+                    src={allImages[currentImageIndex]}
+                    alt={`${project.title} - Image ${currentImageIndex + 1}`}
+                    className="w-full h-auto block"
+                  />
+                  {/* Gradient overlay at bottom for readability */}
+                  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
 
-              {/* Image navigation */}
-              {allImages.length > 1 && (
-                <>
-                  <button
-                    onClick={prevImage}
-                    className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 md:p-2.5 bg-black/40 hover:bg-black/60 active:bg-black/70 text-white rounded-full transition-colors"
-                    aria-label="Image précédente"
-                  >
-                    <svg
-                      className="w-4 h-4 md:w-5 md:h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 19l-7-7 7-7"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    onClick={nextImage}
-                    className="absolute right-2 md:right-12 top-1/2 -translate-y-1/2 p-2 md:p-2.5 bg-black/40 hover:bg-black/60 active:bg-black/70 text-white rounded-full transition-colors"
-                    aria-label="Image suivante"
-                  >
-                    <svg
-                      className="w-4 h-4 md:w-5 md:h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </button>
-
-                  {/* Image indicators */}
-                  <div className="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 md:gap-2">
-                    {allImages.map((_, index) => (
+                  {/* Image navigation */}
+                  {allImages.length > 1 && (
+                    <>
                       <button
-                        key={index}
-                        onClick={() => setCurrentImageIndex(index)}
-                        className={`w-2 h-2 md:w-2.5 md:h-2.5 rounded-full transition-all ${
-                          index === currentImageIndex
-                            ? "bg-white scale-110"
-                            : "bg-white/50 hover:bg-white/75"
-                        }`}
-                        aria-label={`Image ${index + 1}`}
-                      />
-                    ))}
-                  </div>
+                        onClick={prevImage}
+                        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 md:p-2.5 bg-black/40 hover:bg-black/60 active:bg-black/70 text-white rounded-full transition-colors"
+                        aria-label="Image précédente"
+                      >
+                        <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </button>
+                      <button
+                        onClick={nextImage}
+                        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 md:p-2.5 bg-black/40 hover:bg-black/60 active:bg-black/70 text-white rounded-full transition-colors"
+                        aria-label="Image suivante"
+                      >
+                        <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
 
-                  {/* Image labels */}
-                  <div className="absolute top-3 md:top-4 left-3 md:left-4 px-2.5 py-1 bg-black/40 text-white text-xs rounded-full">
-                    {currentImageIndex === 0 && project.image
-                      ? "Screenshot"
-                      : currentImageIndex === 1
-                      ? "Zoning"
-                      : currentImageIndex === 2
-                      ? "Wireframe"
-                      : "Maquette"}
-                  </div>
+                      {/* Image indicators */}
+                      <div className="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 md:gap-2 z-10">
+                        {allImages.map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setCurrentImageIndex(index)}
+                            className={`w-2 h-2 md:w-2.5 md:h-2.5 rounded-full transition-all ${
+                              index === currentImageIndex
+                                ? "bg-white scale-110"
+                                : "bg-white/50 hover:bg-white/75"
+                            }`}
+                            aria-label={`Image ${index + 1}`}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
+              ) : (
+                /* Standard fixed-height mode */
+                <>
+                  <img
+                    src={allImages[currentImageIndex]}
+                    alt={`${project.title} - Image ${currentImageIndex + 1}`}
+                    className={`w-full h-full object-cover ${
+                      project.imagePosition === "top"
+                        ? "object-top"
+                        : project.imagePosition === "bottom"
+                        ? "object-bottom"
+                        : "object-center"
+                    }`}
+                  />
+
+                  {/* Image navigation */}
+                  {allImages.length > 1 && (
+                    <>
+                      <button
+                        onClick={prevImage}
+                        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 md:p-2.5 bg-black/40 hover:bg-black/60 active:bg-black/70 text-white rounded-full transition-colors"
+                        aria-label="Image précédente"
+                      >
+                        <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </button>
+                      <button
+                        onClick={nextImage}
+                        className="absolute right-2 md:right-12 top-1/2 -translate-y-1/2 p-2 md:p-2.5 bg-black/40 hover:bg-black/60 active:bg-black/70 text-white rounded-full transition-colors"
+                        aria-label="Image suivante"
+                      >
+                        <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+
+                      {/* Image indicators */}
+                      <div className="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 md:gap-2">
+                        {allImages.map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setCurrentImageIndex(index)}
+                            className={`w-2 h-2 md:w-2.5 md:h-2.5 rounded-full transition-all ${
+                              index === currentImageIndex
+                                ? "bg-white scale-110"
+                                : "bg-white/50 hover:bg-white/75"
+                            }`}
+                            aria-label={`Image ${index + 1}`}
+                          />
+                        ))}
+                      </div>
+
+                      {/* Image labels */}
+                      <div className="absolute top-3 md:top-4 left-3 md:left-4 flex items-center gap-2">
+                        <span className="px-2.5 py-1 bg-black/40 text-white text-xs rounded-full">
+                          {project.galleryLabels && project.galleryLabels[currentImageIndex]
+                            ? project.galleryLabels[currentImageIndex]
+                            : currentImageIndex === 0 && project.image
+                            ? "Screenshot"
+                            : currentImageIndex === 1
+                            ? "Zoning"
+                            : currentImageIndex === 2
+                            ? "Wireframe"
+                            : "Maquette"}
+                        </span>
+                      </div>
+                    </>
+                  )}
                 </>
+              )}
+
+              {/* Info bar for showcase mode (below image) */}
+              {project.imagePosition === "contain" && allImages.length > 1 && (
+                <div className="flex items-center justify-between px-4 py-2.5 bg-gray-50 dark:bg-gray-800/80 border-b border-gray-200 dark:border-gray-700/50">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-semibold text-gray-900 dark:text-white">
+                      {project.galleryLabels && project.galleryLabels[currentImageIndex]
+                        ? project.galleryLabels[currentImageIndex]
+                        : `Image ${currentImageIndex + 1}`}
+                    </span>
+                    <span className="text-xs text-gray-400">
+                      {currentImageIndex + 1} / {allImages.length}
+                    </span>
+                  </div>
+                  {project.siteLinks && project.siteLinks[currentImageIndex] && (
+                    <a
+                      href={project.siteLinks[currentImageIndex]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-500/10 hover:bg-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-medium rounded-lg transition-colors"
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      Voir le site
+                    </a>
+                  )}
+                </div>
               )}
             </div>
           )}

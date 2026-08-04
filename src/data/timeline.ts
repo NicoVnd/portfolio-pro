@@ -1,6 +1,18 @@
 export const TIMELINE = [
   {
     type: "work",
+    title: "Développeur Web (CDD)",
+    company: "SHAKE | LILLE",
+    period: "Février 2026 – Août 2026",
+    details: [
+      "Développement de sites sur mesure et intégration sous WordPress, PrestaShop et Webflow",
+      "Création de fonctionnalités et d'extensions personnalisées (PHP, JavaScript)",
+      "Maintenance corrective, évolutive et sécurisation des sites clients",
+      "Optimisation des performances et collaboration avec les équipes marketing/webdesign",
+    ],
+  },
+  {
+    type: "work",
     title: "Alternant Développeur Web & SEO",
     company: "ANDERSONTECH | LILLE",
     period: "Octobre 2024 - Septembre 2025",

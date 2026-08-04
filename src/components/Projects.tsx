@@ -7,7 +7,7 @@ import { useInView } from "@/hooks/useInView";
 
 const typeLabels: Record<string, { label: string; class: string }> = {
   school: {
-    label: "Projet de cours",
+    label: "Projet scolaire",
     class:
       "border-purple-500/30 text-purple-600 dark:text-purple-400 bg-purple-500/10",
   },
@@ -17,14 +17,27 @@ const typeLabels: Record<string, { label: string; class: string }> = {
       "border-green-500/30 text-green-600 dark:text-green-400 bg-green-500/10",
   },
   professional: {
-    label: "Projet pro",
+    label: "Projet professionnel",
     class: "border-blue-500/30 text-blue-600 dark:text-blue-400 bg-blue-500/10",
   },
 };
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [activeFilter, setActiveFilter] = useState<"all" | "professional" | "school" | "personal">("all");
   const { ref, isInView } = useInView<HTMLElement>({ threshold: 0.05 });
+
+  const filterOptions = [
+    { id: "all", label: "Tous les projets" },
+    { id: "professional", label: "Projets pro" },
+    { id: "school", label: "Projets scolaires" },
+    { id: "personal", label: "Projets personnels" },
+  ] as const;
+
+  const filteredProjects = PROJECTS.filter((project) => {
+    if (activeFilter === "all") return true;
+    return project.type === activeFilter;
+  });
 
   return (
     <>
@@ -36,7 +49,7 @@ export default function Projects() {
         <div className="container mx-auto px-4 md:px-6">
           {/* Section header */}
           <div
-            className={`text-center mb-10 md:mb-16 ${
+            className={`text-center mb-10 md:mb-12 ${
               isInView ? "animate-fadeInUp" : "opacity-0"
             }`}
           >
@@ -48,11 +61,45 @@ export default function Projects() {
               Une sélection de projets réalisés en cours, en entreprise ou sur
               mon temps libre. Cliquez sur un projet pour en savoir plus.
             </p>
+
+            {/* Filters */}
+            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mt-8">
+              {filterOptions.map((filter) => {
+                const isActive = activeFilter === filter.id;
+                const count =
+                  filter.id === "all"
+                    ? PROJECTS.length
+                    : PROJECTS.filter((p) => p.type === filter.id).length;
+
+                return (
+                  <button
+                    key={filter.id}
+                    onClick={() => setActiveFilter(filter.id)}
+                    className={`px-4 py-2 text-xs md:text-sm font-medium rounded-full transition-all duration-300 flex items-center gap-2 border ${
+                      isActive
+                        ? "bg-blue-600 border-blue-600 text-white shadow-md shadow-blue-500/20 scale-105"
+                        : "bg-white dark:bg-gray-800/80 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-blue-500/50 hover:text-blue-500 dark:hover:text-blue-400"
+                    }`}
+                  >
+                    <span>{filter.label}</span>
+                    <span
+                      className={`text-[10px] md:text-xs px-1.5 py-0.5 rounded-full ${
+                        isActive
+                          ? "bg-white/20 text-white"
+                          : "bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
+                      }`}
+                    >
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Projects grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {PROJECTS.map((project, index) => (
+            {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
                 onClick={() => setSelectedProject(project)}

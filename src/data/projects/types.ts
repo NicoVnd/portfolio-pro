@@ -16,4 +16,6 @@ export interface Project {
   logo?: string;
   status?: string;
   imagePosition?: "cover" | "contain" | "top" | "bottom";
+  galleryLabels?: string[];
+  siteLinks?: string[];
 }

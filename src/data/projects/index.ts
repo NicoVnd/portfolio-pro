@@ -9,25 +9,28 @@ import { commeUnGrand } from "./comme-un-grand";
 import { andersontech } from "./andersontech";
 import { wysiwygArticles } from "./wysiwyg-articles";
 import { mangaHub } from "./manga-hub";
+import { shake } from "./shake";
 
 // Import type for array typing
 import type { Project } from "./types";
 
 // Export combined array - ordered by importance (most important first)
 export const PROJECTS: Project[] = [
-  thetiptop, // Master 2, 7 mois, DevOps complet
-  atypikhouse, // Master 1, 6 mois, projet complet
-  andersontech, // Pro - Alternance
-  commeUnGrand, // Pro - Agence
+  shake, // CDD Agence SHAKE (Dernière expérience pro avec 5 sites réels)
+  thetiptop, // Master 2 (Projet de fin d'études complet, 7 mois, DevOps)
+  atypikhouse, // Master 1 (Projet complet 6 mois)
+  andersontech, // Pro - Alternance Développeur Web & SEO
+  commeUnGrand, // Pro - Alternance Agence Web
   pokebio, // École - Projet pluridisciplinaire
   wysiwygArticles, // Test technique Laravel + Vue
-  mangaHub, // Projet perso en cours
+  mangaHub, // Projet personnel
 ];
 
 // Re-export individual projects for direct imports if needed
 export {
   thetiptop,
   atypikhouse,
+  shake,
   pokebio,
   commeUnGrand,
   andersontech,
