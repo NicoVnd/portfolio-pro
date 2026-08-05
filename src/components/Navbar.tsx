@@ -53,26 +53,26 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? `bg-white/80 dark:bg-gray-950/80 backdrop-blur-lg shadow-lg shadow-black/5 dark:shadow-black/20 py-3 md:py-4 ${
-                justBecameScrolled
-                  ? "animate-navbar-sticky navbar-shimmer-border"
-                  : ""
-              }`
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+            ? `bg-white/80 dark:bg-gray-950/80 backdrop-blur-lg shadow-lg shadow-black/5 dark:shadow-black/20 py-3 md:py-4 ${justBecameScrolled
+              ? "animate-navbar-sticky navbar-shimmer-border"
+              : ""
+            }`
             : "bg-transparent py-4 md:py-6"
-        } ${isLoaded ? "animate-fadeInDown" : "opacity-0"}`}
+          } ${isLoaded ? "animate-fadeInDown" : "opacity-0"}`}
       >
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <img
-              src="/logo.png"
-              alt="Logo"
-              width={48}
-              height={48}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover"
-            />
+          {/* Logo / Initiales */}
+          <a
+            href="#"
+            className="group relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 p-[1.5px] shadow-md shadow-indigo-500/20 group-hover:shadow-indigo-500/40 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300"
+            aria-label="Accueil - Nicolas Vandamme"
+          >
+            <div className="flex items-center justify-center w-full h-full bg-white dark:bg-gray-950 rounded-[10.5px] transition-colors duration-300">
+              <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 text-base md:text-lg tracking-tight group-hover:scale-110 transition-transform duration-300 select-none">
+                NV<span className="text-indigo-500 dark:text-indigo-400">.</span>
+              </span>
+            </div>
           </a>
 
           {/* Desktop Navigation */}
@@ -167,19 +167,16 @@ export default function Navbar() {
               aria-label="Toggle menu"
             >
               <span
-                className={`w-4 h-0.5 bg-gray-600 dark:bg-gray-400 transition-all duration-300 ${
-                  isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
-                }`}
+                className={`w-4 h-0.5 bg-gray-600 dark:bg-gray-400 transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
+                  }`}
               ></span>
               <span
-                className={`w-4 h-0.5 bg-gray-600 dark:bg-gray-400 transition-all duration-300 ${
-                  isMobileMenuOpen ? "opacity-0" : ""
-                }`}
+                className={`w-4 h-0.5 bg-gray-600 dark:bg-gray-400 transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : ""
+                  }`}
               ></span>
               <span
-                className={`w-4 h-0.5 bg-gray-600 dark:bg-gray-400 transition-all duration-300 ${
-                  isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
-                }`}
+                className={`w-4 h-0.5 bg-gray-600 dark:bg-gray-400 transition-all duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+                  }`}
               ></span>
             </button>
           </div>
@@ -188,17 +185,15 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300 ${
-          isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300 ${isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
         onClick={() => setIsMobileMenuOpen(false)}
       />
 
       {/* Mobile Menu Panel */}
       <div
-        className={`fixed top-0 right-0 h-full w-72 bg-white dark:bg-gray-900 z-50 md:hidden transition-transform duration-300 ease-out shadow-2xl ${
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-full w-72 bg-white dark:bg-gray-900 z-50 md:hidden transition-transform duration-300 ease-out shadow-2xl ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         {/* Menu Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-800">
