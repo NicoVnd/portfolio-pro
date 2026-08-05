@@ -3,6 +3,10 @@ export interface Project {
   title: string;
   description: string;
   fullDescription: string;
+  context?: string;
+  problem?: string;
+  solution?: string;
+  result?: string;
   type: "school" | "personal" | "professional";
   tags: string[];
   learned: string[];

@@ -10,6 +10,10 @@ export const atypikhouse: Project = {
 Ce projet de fin d'année de Master 1 a été réalisé en équipe de 4 personnes sur plusieurs mois. L'objectif était de créer un site style Airbnb mais spécialisé dans les logements insolites : cabanes dans les arbres, yourtes, maisons flottantes, igloos, etc.
 
 Le site propose une expérience utilisateur complète avec un système de recherche avancé, des fiches détaillées pour chaque hébergement, un système de réservation avec paiement sécurisé, et un espace propriétaire pour gérer ses biens.`,
+  context: "Projet de fin d'année de Master 1 (6 mois) réalisé en équipe de 4 étudiants pour une startup d'hébergements insolites.",
+  problem: "Offrir une marketplace ergonomique et rapide permettant la recherche, la réservation et le paiement sécurisé de logements hors du commun.",
+  solution: "Développement d'une PWA en Laravel 10 / Livewire avec intégration Stripe et panel d'administration Filament.",
+  result: "Une application web progressive fluide, consultable sur mobile comme sur desktop avec un parcours de réservation de A à Z.",
   type: "school",
   tags: ["Laravel", "Livewire", "filament", "PWA", "Tailwind CSS", "SQLite"],
   learned: [

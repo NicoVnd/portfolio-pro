@@ -299,35 +299,35 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           )}
 
           {/* Content */}
-          <div className="p-4 md:p-8">
+          <div className="p-4 md:p-8 space-y-6 md:space-y-8">
             {/* Header badges */}
-            <div className="flex flex-wrap items-center gap-2 mb-4">
+            <div className="flex flex-wrap items-center gap-2">
               <span
-                className={`text-xs px-2.5 py-1 rounded-full border font-medium ${
+                className={`text-xs px-3 py-1 rounded-full border font-medium ${
                   typeLabels[project.type].class
                 }`}
               >
                 {typeLabels[project.type].label}
               </span>
               {project.teamSize && (
-                <span className="text-xs px-2.5 py-1 rounded-full border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400">
-                  👥 {project.teamSize}
+                <span className="text-xs px-3 py-1 rounded-full border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-800/50">
+                  👥 Equipe de {project.teamSize}
                 </span>
               )}
               {project.duration && (
-                <span className="text-xs px-2.5 py-1 rounded-full border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400">
+                <span className="text-xs px-3 py-1 rounded-full border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-800/50">
                   ⏱️ {project.duration}
                 </span>
               )}
             </div>
 
-            {/* Title - Desktop only (mobile has it in header) */}
-            <div className="hidden md:flex items-center gap-4 mb-4">
+            {/* Title - Desktop only (mobile has it in sticky header) */}
+            <div className="hidden md:flex items-center gap-4">
               {project.logo && (
                 <img
                   src={project.logo}
                   alt={`Logo ${project.title}`}
-                  className="w-12 h-12 object-contain bg-white rounded-xl p-1.5 shadow-md"
+                  className="w-12 h-12 object-contain bg-white dark:bg-gray-800 rounded-xl p-1.5 shadow-md border border-gray-100 dark:border-gray-700"
                 />
               )}
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
@@ -335,81 +335,150 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </h2>
             </div>
 
-            {/* Full description */}
-            <div className="prose prose-gray dark:prose-invert max-w-none mb-5 md:mb-6">
-              {project.fullDescription.split("\n\n").map((paragraph, i) => (
-                <p
-                  key={i}
-                  className="text-sm md:text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-2 md:mb-3"
-                >
-                  {paragraph}
-                </p>
-              ))}
+            {/* Structured Executive Section (Context left / Cards right) */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+              {/* Left Column: Context & Overview */}
+              <div className="lg:col-span-7 space-y-4">
+                {project.context && (
+                  <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-base">📌</span>
+                      <h3 className="text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+                        Contexte du projet
+                      </h3>
+                    </div>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                      {project.context}
+                    </p>
+                  </div>
+                )}
+
+                {/* Full description paragraphs */}
+                <div className="prose prose-gray dark:prose-invert max-w-none text-xs md:text-sm text-gray-600 dark:text-gray-400 leading-relaxed space-y-2">
+                  {project.fullDescription.split("\n\n").map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Column: Problem, Solution, Result cards */}
+              <div className="lg:col-span-5 space-y-2.5">
+                {project.problem && (
+                  <div className="p-3 md:p-3.5 rounded-xl bg-amber-500/5 dark:bg-amber-500/10 border border-amber-500/20 text-amber-900 dark:text-amber-200">
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <span className="text-xs">🎯</span>
+                      <h4 className="text-[11px] font-bold uppercase tracking-wide text-amber-700 dark:text-amber-400">
+                        Problème à résoudre
+                      </h4>
+                    </div>
+                    <p className="text-xs text-gray-700 dark:text-gray-300 leading-snug">
+                      {project.problem}
+                    </p>
+                  </div>
+                )}
+
+                {project.solution && (
+                  <div className="p-3 md:p-3.5 rounded-xl bg-blue-500/5 dark:bg-blue-500/10 border border-blue-500/20 text-blue-900 dark:text-blue-200">
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <span className="text-xs">🛠️</span>
+                      <h4 className="text-[11px] font-bold uppercase tracking-wide text-blue-700 dark:text-blue-400">
+                        Ce qui a été réalisé
+                      </h4>
+                    </div>
+                    <p className="text-xs text-gray-700 dark:text-gray-300 leading-snug">
+                      {project.solution}
+                    </p>
+                  </div>
+                )}
+
+                {project.result && (
+                  <div className="p-3 md:p-3.5 rounded-xl bg-emerald-500/5 dark:bg-emerald-500/10 border border-emerald-500/20 text-emerald-900 dark:text-emerald-200">
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <span className="text-xs">🏆</span>
+                      <h4 className="text-[11px] font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
+                        Résultat obtenu
+                      </h4>
+                    </div>
+                    <p className="text-xs text-gray-700 dark:text-gray-300 leading-snug">
+                      {project.result}
+                    </p>
+                  </div>
+                )}
+              </div>
             </div>
 
-            {/* Features */}
+            <hr className="border-gray-100 dark:border-gray-800" />
+
+            {/* Key Features */}
             {project.features.length > 0 && (
-              <div className="mb-5 md:mb-6">
-                <h3 className="text-xs md:text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2 md:mb-3">
-                  Fonctionnalités clés
+              <div>
+                <h3 className="text-xs md:text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <span className="text-amber-500">⚡</span> Fonctionnalités clés
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5 md:gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {project.features.map((feature, i) => (
                     <div
                       key={i}
-                      className="flex items-start gap-2 text-gray-600 dark:text-gray-400"
+                      className="p-3 rounded-xl bg-gray-50/80 dark:bg-gray-800/40 border border-gray-200/60 dark:border-gray-800 flex items-start gap-2.5 transition-all hover:border-gray-300 dark:hover:border-gray-700"
                     >
-                      <svg
-                        className="w-4 h-4 md:w-5 md:h-5 text-green-500 mt-0.5 flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span className="text-xs md:text-sm">{feature}</span>
+                      <div className="w-4 h-4 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg
+                          className="w-2.5 h-2.5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={3}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-xs text-gray-700 dark:text-gray-300 leading-snug font-medium">
+                        {feature}
+                      </span>
                     </div>
                   ))}
                 </div>
               </div>
             )}
 
-            {/* Technologies */}
-            <div className="mb-5 md:mb-6">
-              <h3 className="text-xs md:text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2 md:mb-3">
-                Technologies utilisées
-              </h3>
-              <div className="flex flex-wrap gap-1.5 md:gap-2">
-                {project.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-2.5 py-1 md:px-3 md:py-1.5 text-xs md:text-sm font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-lg border border-blue-500/20"
-                  >
-                    {tag}
-                  </span>
-                ))}
+            {/* Stack & Learnings - Compact Inline Sections */}
+            <div className="space-y-4 pt-1">
+              {/* Technologies */}
+              <div>
+                <h3 className="text-xs font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                  <span>💻</span> Technologies utilisées
+                </h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="px-2.5 py-1 text-xs font-mono font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-lg border border-blue-500/20"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* What I learned */}
-            <div className="mb-6 md:mb-8">
-              <h3 className="text-xs md:text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2 md:mb-3">
-                Ce que j&apos;ai appris
-              </h3>
-              <div className="flex flex-wrap gap-1.5 md:gap-2">
-                {project.learned.map((item, i) => (
-                  <span
-                    key={i}
-                    className="text-xs md:text-sm text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2.5 py-1 md:px-3 md:py-1.5 rounded-lg"
-                  >
-                    {item}
-                  </span>
-                ))}
+              {/* What I learned */}
+              <div>
+                <h3 className="text-xs font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                  <span>💡</span> Ce que j&apos;ai appris
+                </h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {project.learned.map((item, i) => (
+                    <span
+                      key={i}
+                      className="px-2.5 py-1 text-xs text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 rounded-lg font-medium"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 

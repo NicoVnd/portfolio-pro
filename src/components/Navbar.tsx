@@ -14,28 +14,19 @@ const navLinks = [
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [justBecameScrolled, setJustBecameScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     setIsLoaded(true);
-    let wasScrolled = window.scrollY > 50;
 
     const handleScroll = () => {
-      const nowScrolled = window.scrollY > 50;
-
-      // Detect transition to scrolled state
-      if (nowScrolled && !wasScrolled) {
-        setJustBecameScrolled(true);
-        // Reset animation flag after animation completes
-        setTimeout(() => setJustBecameScrolled(false), 400);
-      }
-
-      wasScrolled = nowScrolled;
-      setIsScrolled(nowScrolled);
+      setIsScrolled(window.scrollY > 50);
     };
+
+    // Initialize state on mount
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -54,10 +45,7 @@ export default function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-            ? `bg-white/80 dark:bg-gray-950/80 backdrop-blur-lg shadow-lg shadow-black/5 dark:shadow-black/20 py-3 md:py-4 ${justBecameScrolled
-              ? "animate-navbar-sticky navbar-shimmer-border"
-              : ""
-            }`
+            ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-lg shadow-lg shadow-black/5 dark:shadow-black/20 py-3 md:py-4"
             : "bg-transparent py-4 md:py-6"
           } ${isLoaded ? "animate-fadeInDown" : "opacity-0"}`}
       >

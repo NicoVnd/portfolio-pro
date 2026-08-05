@@ -10,6 +10,10 @@ export const pokebio: Project = {
 En équipe de 6 personnes, nous avons créé en seulement 5 jours le site web d'une dark kitchen spécialisée dans les poke bowls bio et healthy. 
 
 En tant que développeur (nous étions 2), j'ai travaillé sur l'intégration du site sous WordPress avec ACF (Advanced Custom Fields) pour permettre une gestion de contenu flexible et intuitive pour le client.`,
+  context: "Projet d'école pluridisciplinaire express (5 jours) réunissant 6 membres : développeurs, graphistes et spécialistes en marketing.",
+  problem: "Créer l'identité digitale et une plateforme de commande en ligne pour une dark kitchen de poké bowls bio dans un délai extrêmement serré.",
+  solution: "Intégration rapide sur-mesure sous WordPress avec ACF (Advanced Custom Fields) et WooCommerce pour une prise en main facile par le client.",
+  result: "Site web totalement fonctionnel livré dans les temps avec une identité visuelle forte et une navigation ultra fluide.",
   type: "school",
   tags: ["WordPress", "ACF", "PHP", "JavaScript", "SCSS", "WooCommerce"],
   learned: [

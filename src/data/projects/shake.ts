@@ -5,13 +5,17 @@ export const shake: Project = {
   title: "CDD - SHAKE",
   description:
     "Développement et intégration de sites web sur mesure pour des clients variés : agence événementielle, BTP, mobilité électrique, fermetures et produits innovants.",
-  fullDescription: `Durant mon CDD chez SHAKE, agence web basée à Lille, j'ai eu l'opportunité de travailler sur le développement de sites web sur mesure pour des clients aux profils très différents.
+  fullDescription: `Durant mon CDD chez SHAKE, agence web basée à Lille, j'ai eu l'opportunité de travailler sur le développement de sites web sur mesure pour des clients aux profiles très différents.
 
 J'ai développé et intégré des sites à partir de maquettes graphiques, en utilisant principalement WordPress, PrestaShop et Webflow selon les besoins de chaque projet. Pour certains clients, j'ai développé des fonctionnalités et extensions personnalisées en PHP et JavaScript afin de répondre à des besoins spécifiques.
 
 En parallèle, j'assurais la maintenance corrective et évolutive des sites existants : mises à jour des CMS, thèmes et extensions, sécurisation, et correction de bugs. J'ai également veillé à l'optimisation des performances et à la qualité globale des développements.
 
 Ce CDD m'a permis de renforcer ma polyvalence technique et de collaborer étroitement avec les équipes marketing et webdesign pour garantir la conformité des projets aux attentes des clients.`,
+  context: "CDD de 6 mois au sein de l'agence web SHAKE à Lille pour la production et maintenance de projets web clients variés (BTP, Événementiel, Mobilité...).",
+  problem: "Concevoir des sites vitrines et e-commerce sur-mesure fidèles aux maquettes graphiques avec des exigences fortes en performance et réactivité.",
+  solution: "Intégration pixel-perfect sous WordPress, PrestaShop et Webflow, couplée au développement de plugins PHP et modules JS personnalisés.",
+  result: "Publication réussie de 5+ sites clients majeurs (Potion Magic, Delebat, Isyblock, Ramery, Newtech) et maintenance pérenne des parcs existants.",
   type: "professional",
   tags: ["WordPress", "PrestaShop", "Webflow", "PHP", "JavaScript", "CSS"],
   learned: [
@@ -53,5 +57,6 @@ Ce CDD m'a permis de renforcer ma polyvalence technique et de collaborer étroit
     "https://newtech-fermetures.com/",
   ],
   duration: "CDD — 6 mois",
+  logo: "/projects/Shake_Logo_2023_Noir.png",
   imagePosition: "contain",
 };

@@ -12,6 +12,10 @@ L'objectif est de créer une plateforme complète de suivi d'animés, similaire 
 Le système permet également de laisser des avis et des notes sur chaque animé, offrant ainsi une dimension communautaire à la plateforme.
 
 ⚠️ Ce projet est actuellement en cours de développement.`,
+  context: "Projet fil rouge personnel d'apprentissage approfondi du framework PHP Symfony.",
+  problem: "Proposer un outil moderne et intuitif pour centraliser le suivi d'épisodes et les avis sur les séries japonaises.",
+  solution: "Architecture MVC propre avec Symfony 6, moteur de rendu Twig, ORM Doctrine et base de données MySQL.",
+  result: "Montée en compétences sur l'écosystème Symfony et construction d'un socle d'application robuste.",
   type: "personal",
   tags: ["Symfony", "PHP", "Twig", "JavaScript", "MySQL"],
   learned: [

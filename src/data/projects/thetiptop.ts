@@ -14,6 +14,10 @@ L'architecture intègre un workflow CI/CD complet avec Docker, Jenkins et plusie
 Les utilisateurs peuvent participer en saisissant des codes tickets pour remporter des lots (thés, infuseurs, coffrets). Le système gère plusieurs rôles : utilisateurs standards, employés boutique pour valider les gains, et administrateurs avec accès complet au panel Filament.
 
 Fonctionnalités clés : inscription OAuth (Google, Facebook), statistiques utilisateur, tirage au sort final avec log cryptographique sécurisé, et gestion complète des lots et stocks.`,
+  context: "Projet de fin d'études en Master 2 (7 mois) réalisé en équipe de 4 développeurs pour la marque fictive de thé haut de gamme Thé Tip Top.",
+  problem: "Concevoir une application de jeu concours haute disponibilité, capable d'absorber de gros volumes de tickets tout en garantissant l'infalsifiabilité des tirages au sort et une administration fluide.",
+  solution: "Développement d'une plateforme Fullstack Laravel 12 / Livewire 3 avec panel Filament, conteneurisée sous Docker et intégrée dans un pipeline CI/CD automatisé via Jenkins.",
+  result: "Une plateforme DevOps complète industrialisée, multi-rôles, sécurisée avec traçabilité cryptographique du tirage au sort et 100% opérationnelle.",
   type: "school",
   tags: [
     "Laravel 12",

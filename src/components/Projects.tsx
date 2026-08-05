@@ -103,7 +103,7 @@ export default function Projects() {
               <div
                 key={project.id}
                 onClick={() => setSelectedProject(project)}
-                className={`group cursor-pointer bg-white dark:bg-gray-900/50 rounded-2xl border border-[#E5E7EB] dark:border-gray-800 overflow-hidden hover:border-[#334155] transition-all duration-300 hover:shadow-lg ${
+                className={`group cursor-pointer bg-white dark:bg-gray-900/50 rounded-2xl border border-[#E5E7EB] dark:border-gray-800 overflow-hidden hover:border-[#334155] transition-all duration-300 hover:shadow-lg flex flex-col justify-between ${
                   isInView ? "animate-fadeInUp" : "opacity-0"
                 }`}
                 style={{
@@ -111,58 +111,61 @@ export default function Projects() {
                   animationFillMode: "forwards",
                 }}
               >
-                {/* Header with type badge */}
-                <div className="p-6 pb-0">
-                  <div className="flex items-start justify-between mb-4">
-                    <span
-                      className={`text-xs px-3 py-1 rounded-full border font-medium ${
-                        typeLabels[project.type].class
-                      }`}
-                    >
-                      {typeLabels[project.type].label}
-                    </span>
-                    {project.logo ? (
-                      <img
-                        src={project.logo}
-                        alt={`Logo ${project.title}`}
-                        className="w-10 h-10 object-contain rounded-lg dark:bg-white dark:border-gray-200 dark:border-1"
-                      />
-                    ) : project.status ? (
-                      <span className="text-xs text-amber-500 dark:text-amber-400 italic">
-                        {project.status}
+                {/* Upper content container */}
+                <div className="flex flex-col flex-1">
+                  {/* Header with type badge */}
+                  <div className="p-6 pb-0">
+                    <div className="flex items-start justify-between mb-4 h-10">
+                      <span
+                        className={`text-xs px-3 py-1 rounded-full border font-medium ${
+                          typeLabels[project.type].class
+                        }`}
+                      >
+                        {typeLabels[project.type].label}
                       </span>
-                    ) : null}
+                      {project.logo ? (
+                        <img
+                          src={project.logo}
+                          alt={`Logo ${project.title}`}
+                          className="w-10 h-10 object-contain rounded-lg dark:bg-white dark:border-gray-200 dark:border-1"
+                        />
+                      ) : project.status ? (
+                        <span className="text-xs text-amber-500 dark:text-amber-400 italic">
+                          {project.status}
+                        </span>
+                      ) : null}
+                    </div>
+
+                    <h3 className="text-xl font-bold text-[#1F2937] dark:text-white mb-2 group-hover:text-[#334155] dark:group-hover:text-slate-300 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-[#1F2937]/75 dark:text-gray-400 text-sm mb-4 leading-relaxed line-clamp-3">
+                      {project.description}
+                    </p>
                   </div>
 
-                  <h3 className="text-xl font-bold text-[#1F2937] dark:text-white mb-2 group-hover:text-[#334155] dark:group-hover:text-slate-300 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-[#1F2937]/75 dark:text-gray-400 text-sm mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* What I learned — inline items with slate color */}
-                <div className="px-6 pb-4">
-                  <p className="text-xs text-gray-500 uppercase tracking-wider mb-2 font-medium">
-                    Ce que j&apos;ai appris
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.learned.slice(0, 3).map((item, i) => (
-                      <span
-                        key={i}
-                        className="tech-tag text-[10px] md:text-xs text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800/50 px-2 py-1 rounded"
-                      >
-                        {item}
-                      </span>
-                    ))}
+                  {/* What I learned — inline items with slate color */}
+                  <div className="px-6 pb-4 mt-auto">
+                    <p className="text-xs text-gray-500 uppercase tracking-wider mb-2 font-medium">
+                      Ce que j&apos;ai appris
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.learned.slice(0, 3).map((item, i) => (
+                        <span
+                          key={i}
+                          className="tech-tag text-[10px] md:text-xs text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800/50 px-2 py-1 rounded"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
                 {/* Footer with tags and actions */}
-                <div className="p-6 pt-4 border-t border-[#E5E7EB] dark:border-gray-800/50">
+                <div className="p-6 pt-4 border-t border-[#E5E7EB] dark:border-gray-800/50 bg-gray-50/30 dark:bg-transparent">
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-4 min-h-[34px] items-center">
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
