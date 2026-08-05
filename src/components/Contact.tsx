@@ -61,7 +61,7 @@ const ContactForm = () => {
     <section
       ref={ref}
       id="contact"
-      className="w-full py-12 md:py-24 bg-slate-50 dark:bg-gray-950"
+      className="w-full py-12 md:py-24 bg-[#F7F7F8] dark:bg-gray-950"
     >
       <div className="container mx-auto px-4 md:px-6">
         {/* Section header */}
@@ -70,14 +70,14 @@ const ContactForm = () => {
             isInView ? "animate-fadeInUp" : "opacity-0"
           }`}
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#1F2937] dark:text-white mb-4">
             Contact
           </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
+          <div className="h-1 w-20 bg-[#334155] mx-auto rounded-full"></div>
         </div>
 
         <div
-          className={`max-w-5xl mx-auto bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden backdrop-blur-sm ${
+          className={`max-w-5xl mx-auto bg-white dark:bg-gray-900/50 border border-[#E5E7EB] dark:border-gray-800 rounded-3xl overflow-hidden backdrop-blur-sm ${
             isInView ? "animate-fadeInUp" : "opacity-0"
           }`}
           style={{
@@ -88,29 +88,29 @@ const ContactForm = () => {
         >
           <div className="flex flex-col md:flex-row">
             {/* Infos de contact (Gauche) */}
-            <div className="md:w-1/3 p-10 pt-12 md:pt-10 bg-gradient-to-br from-blue-600 to-indigo-600 text-white">
+            <div className="md:w-1/3 p-10 pt-12 md:pt-10 bg-[#334155] text-white">
               <h3 className="text-2xl font-bold mb-4">
                 Discutons de votre projet
               </h3>
-              <p className="text-blue-100 mb-8 leading-relaxed">
+              <p className="text-slate-300 mb-8 leading-relaxed">
                 Actuellement à la recherche d'opportunités en développement web.
               </p>
 
               <div className="space-y-6">
                 <div>
-                  <p className="text-sm text-blue-200 uppercase tracking-widest font-semibold mb-1">
+                  <p className="text-sm text-slate-400 uppercase tracking-widest font-semibold mb-1">
                     Email
                   </p>
                   <p className="text-lg">nclsvandamme@gmail.com</p>
                 </div>
                 <div>
-                  <p className="text-sm text-blue-200 uppercase tracking-widest font-semibold mb-1">
+                  <p className="text-sm text-slate-400 uppercase tracking-widest font-semibold mb-1">
                     Téléphone
                   </p>
                   <p className="text-lg">06.19.02.26.47</p>
                 </div>
                 <div>
-                  <p className="text-sm text-blue-200 uppercase tracking-widest font-semibold mb-1">
+                  <p className="text-sm text-slate-400 uppercase tracking-widest font-semibold mb-1">
                     Localisation
                   </p>
                   <p className="text-lg">
@@ -120,7 +120,7 @@ const ContactForm = () => {
               </div>
 
               {/* Social Links */}
-              <div className="mt-10 pt-8 border-t border-blue-400/30">
+              <div className="mt-10 pt-8 border-t border-slate-600/40">
                 <p className="text-sm text-blue-200 uppercase tracking-widest font-semibold mb-4">
                   Retrouvez-moi
                 </p>
@@ -160,7 +160,7 @@ const ContactForm = () => {
             </div>
 
             {/* Formulaire (Droite) */}
-            <div className="md:w-2/3 p-10 bg-gray-100 dark:bg-gray-900">
+            <div className="md:w-2/3 p-10 bg-[#F7F7F8] dark:bg-gray-900">
               {status === "success" ? (
                 <div className="h-full flex flex-col items-center justify-center text-center py-10">
                   <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-6">
@@ -178,16 +178,16 @@ const ContactForm = () => {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-2xl font-bold text-[#1F2937] dark:text-white mb-2">
                     Message envoyé !
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6">
+                  <p className="text-[#64748B] dark:text-gray-400 mb-6">
                     Merci pour votre message. Je vous répondrai dans les plus
                     brefs délais.
                   </p>
                   <button
                     onClick={() => setStatus("idle")}
-                    className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-xl transition-all duration-300"
+                    className="px-6 py-3 bg-[#334155] hover:bg-[#1E293B] text-white font-semibold rounded-xl transition-all duration-300"
                   >
                     Envoyer un autre message
                   </button>
@@ -196,51 +196,51 @@ const ContactForm = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
+                      <label className="block text-sm font-medium text-[#1F2937]/80 dark:text-gray-400 mb-2">
                         Nom complet
                       </label>
                       <input
                         type="text"
                         name="name"
                         required
-                        className="w-full bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                        className="w-full bg-white dark:bg-gray-800/50 border border-[#E5E7EB] dark:border-gray-700 rounded-xl px-4 py-3 text-[#1F2937] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#334155] focus:ring-1 focus:ring-[#334155] transition-all"
                         placeholder="Jean Dupont"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
+                      <label className="block text-sm font-medium text-[#1F2937]/80 dark:text-gray-400 mb-2">
                         Email
                       </label>
                       <input
                         type="email"
                         name="email"
                         required
-                        className="w-full bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                        className="w-full bg-white dark:bg-gray-800/50 border border-[#E5E7EB] dark:border-gray-700 rounded-xl px-4 py-3 text-[#1F2937] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#334155] focus:ring-1 focus:ring-[#334155] transition-all"
                         placeholder="jean@exemple.com"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
+                    <label className="block text-sm font-medium text-[#1F2937]/80 dark:text-gray-400 mb-2">
                       Sujet
                     </label>
                     <input
                       type="text"
                       name="subject"
                       required
-                      className="w-full bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                      className="w-full bg-white dark:bg-gray-800/50 border border-[#E5E7EB] dark:border-gray-700 rounded-xl px-4 py-3 text-[#1F2937] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#334155] focus:ring-1 focus:ring-[#334155] transition-all"
                       placeholder="Offre d'emploi / Projet"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
+                    <label className="block text-sm font-medium text-[#1F2937]/80 dark:text-gray-400 mb-2">
                       Message
                     </label>
                     <textarea
                       rows={5}
                       name="message"
                       required
-                      className="w-full bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none"
+                      className="w-full bg-white dark:bg-gray-800/50 border border-[#E5E7EB] dark:border-gray-700 rounded-xl px-4 py-3 text-[#1F2937] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#334155] focus:ring-1 focus:ring-[#334155] transition-all resize-none"
                       placeholder="Votre message ici..."
                     ></textarea>
                   </div>
@@ -254,7 +254,7 @@ const ContactForm = () => {
                   <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
+                    className="w-full py-4 bg-[#334155] hover:bg-[#1E293B] text-white font-bold rounded-xl transition-all duration-300 shadow-md hover:scale-[1.01] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
                     {status === "loading" ? (
                       <span className="flex items-center justify-center gap-2">

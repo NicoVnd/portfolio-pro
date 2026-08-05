@@ -3,9 +3,18 @@
 /* Enable class-based dark mode for Tailwind v4 */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ===== Design Tokens ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-bg:         #F7F7F8;
+  --color-card:       #FFFFFF;
+  --color-text:       #1F2937;
+  --color-text-muted: #6B7280;
+  --color-border:     #E5E7EB;
+  --color-accent:     #334155;
+
+  /* Tailwind aliases */
+  --background: #F7F7F8;
+  --foreground: #1F2937;
 }
 
 @theme inline {
@@ -15,32 +24,75 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Light mode (default) */
-body {
-  background: #f8fafc;
-  color: #1f2937;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    sans-serif;
-}
-
-/* Dark mode */
-.dark body {
-  background: #030712;
-  color: #f9fafb;
-}
-
-/* Smooth scrolling */
+/* ===== Base ===== */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar - Light mode */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark mode */
+.dark body {
+  background-color: #030712;
+  color: #F9FAFB;
+}
+
+/* ===== Typography System ===== */
+
+/* H1 — Geist Sans 800 */
+h1 {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-weight: 800;
+}
+
+/* H2 — Geist Sans 700 */
+h2 {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-weight: 700;
+}
+
+/* H3 — Geist Sans 700 */
+h3 {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-weight: 700;
+}
+
+/* Body — Geist Sans 400 */
+p, li {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-weight: 400;
+}
+
+/* Buttons — Geist Sans 600 */
+button, a.btn {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* Tags / Technologies / Code — Geist Mono 500 */
+.tech-tag,
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-geist-mono), "Menlo", "Monaco", "Courier New", monospace;
+  font-weight: 500;
+}
+
+/* ===== Custom Scrollbar — Light ===== */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #e5e7eb;
+  background: var(--color-border);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -52,7 +104,7 @@ html {
   background: #6b7280;
 }
 
-/* Custom scrollbar - Dark mode */
+/* ===== Custom Scrollbar — Dark ===== */
 .dark ::-webkit-scrollbar-track {
   background: #111827;
 }
@@ -65,7 +117,7 @@ html {
   background: #4b5563;
 }
 
-/* Hide reCAPTCHA badge - Required text attribution is in the form */
+/* Hide reCAPTCHA badge */
 .grecaptcha-badge {
   visibility: hidden !important;
 }
@@ -185,40 +237,15 @@ html {
   animation: slideInRight 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* Initial state for animated elements */
-.animate-on-scroll {
-  opacity: 0;
-}
-
-.animate-on-scroll.is-visible {
-  opacity: 1;
-}
-
 /* Stagger delay utilities */
-.delay-0 {
-  animation-delay: 0ms;
-}
-.delay-100 {
-  animation-delay: 100ms;
-}
-.delay-200 {
-  animation-delay: 200ms;
-}
-.delay-300 {
-  animation-delay: 300ms;
-}
-.delay-400 {
-  animation-delay: 400ms;
-}
-.delay-500 {
-  animation-delay: 500ms;
-}
-.delay-600 {
-  animation-delay: 600ms;
-}
-.delay-700 {
-  animation-delay: 700ms;
-}
+.delay-0   { animation-delay: 0ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
 
 /* Navbar sticky animations */
 .animate-navbar-sticky {
@@ -240,7 +267,7 @@ html {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(59, 130, 246, 0.5),
+    rgba(37, 99, 235, 0.5),
     rgba(99, 102, 241, 0.5),
     transparent
   );

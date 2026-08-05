@@ -44,7 +44,7 @@ export default function Projects() {
       <section
         ref={ref}
         id="projects"
-        className="w-full py-12 md:py-24 bg-gray-100/50 dark:bg-gray-900/30"
+        className="w-full py-12 md:py-24 bg-white dark:bg-gray-900/30"
       >
         <div className="container mx-auto px-4 md:px-6">
           {/* Section header */}
@@ -53,11 +53,11 @@ export default function Projects() {
               isInView ? "animate-fadeInUp" : "opacity-0"
             }`}
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#1F2937] dark:text-white mb-4">
               Mes Projets
             </h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
-            <p className="mt-6 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <div className="h-1 w-20 bg-[#334155] mx-auto rounded-full"></div>
+            <p className="mt-6 text-[#1F2937]/75 dark:text-gray-400 max-w-2xl mx-auto">
               Une sélection de projets réalisés en cours, en entreprise ou sur
               mon temps libre. Cliquez sur un projet pour en savoir plus.
             </p>
@@ -77,8 +77,8 @@ export default function Projects() {
                     onClick={() => setActiveFilter(filter.id)}
                     className={`px-4 py-2 text-xs md:text-sm font-medium rounded-full transition-all duration-300 flex items-center gap-2 border ${
                       isActive
-                        ? "bg-blue-600 border-blue-600 text-white shadow-md shadow-blue-500/20 scale-105"
-                        : "bg-white dark:bg-gray-800/80 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-blue-500/50 hover:text-blue-500 dark:hover:text-blue-400"
+                        ? "bg-[#334155] border-[#334155] text-white shadow-sm scale-105"
+                        : "bg-white dark:bg-gray-800/80 border-[#E5E7EB] dark:border-gray-700 text-[#1F2937] dark:text-gray-300 hover:border-[#334155] hover:text-[#334155] dark:hover:text-slate-300"
                     }`}
                   >
                     <span>{filter.label}</span>
@@ -86,7 +86,7 @@ export default function Projects() {
                       className={`text-[10px] md:text-xs px-1.5 py-0.5 rounded-full ${
                         isActive
                           ? "bg-white/20 text-white"
-                          : "bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
+                          : "bg-[#F7F7F8] dark:bg-gray-700 text-[#1F2937]/70 dark:text-gray-400"
                       }`}
                     >
                       {count}
@@ -103,7 +103,7 @@ export default function Projects() {
               <div
                 key={project.id}
                 onClick={() => setSelectedProject(project)}
-                className={`group cursor-pointer bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 ${
+                className={`group cursor-pointer bg-white dark:bg-gray-900/50 rounded-2xl border border-[#E5E7EB] dark:border-gray-800 overflow-hidden hover:border-[#334155] transition-all duration-300 hover:shadow-lg ${
                   isInView ? "animate-fadeInUp" : "opacity-0"
                 }`}
                 style={{
@@ -134,15 +134,15 @@ export default function Projects() {
                     ) : null}
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl font-bold text-[#1F2937] dark:text-white mb-2 group-hover:text-[#334155] dark:group-hover:text-slate-300 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">
+                  <p className="text-[#1F2937]/75 dark:text-gray-400 text-sm mb-4 leading-relaxed">
                     {project.description}
                   </p>
                 </div>
 
-                {/* What I learned */}
+                {/* What I learned — inline items with slate color */}
                 <div className="px-6 pb-4">
                   <p className="text-xs text-gray-500 uppercase tracking-wider mb-2 font-medium">
                     Ce que j&apos;ai appris
@@ -151,7 +151,7 @@ export default function Projects() {
                     {project.learned.slice(0, 3).map((item, i) => (
                       <span
                         key={i}
-                        className="text-[10px] md:text-xs text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800/50 px-2 py-1 rounded"
+                        className="tech-tag text-[10px] md:text-xs text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800/50 px-2 py-1 rounded"
                       >
                         {item}
                       </span>
@@ -160,13 +160,13 @@ export default function Projects() {
                 </div>
 
                 {/* Footer with tags and actions */}
-                <div className="p-6 pt-4 border-t border-gray-100 dark:border-gray-800/50">
+                <div className="p-6 pt-4 border-t border-[#E5E7EB] dark:border-gray-800/50">
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-lg border border-blue-500/20"
+                        className="tech-tag px-3 py-1 text-xs bg-[rgba(51,65,85,0.09)] text-[#475569] dark:text-slate-300 rounded-lg border border-[rgba(51,65,85,0.20)] dark:border-slate-600"
                       >
                         {tag}
                       </span>
@@ -181,7 +181,7 @@ export default function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="flex-1 py-2.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white text-sm font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
+                        className="flex-1 py-2.5 px-4 bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700 hover:bg-[#F1F5F9] dark:hover:bg-gray-700 text-[#334155] dark:text-white text-sm font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
                       >
                         <svg
                           className="w-4 h-4"
@@ -193,7 +193,7 @@ export default function Projects() {
                         Voir le code
                       </a>
                     )}
-                    <button className="flex-1 py-2.5 px-4 bg-blue-500/10 hover:bg-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-medium rounded-lg transition-colors flex items-center justify-center gap-2">
+                    <button className="flex-1 py-2.5 px-4 bg-[#334155] hover:bg-[#1E293B] text-white text-sm font-medium rounded-lg transition-colors flex items-center justify-center gap-2">
                       Détails
                       <svg
                         className="w-4 h-4"

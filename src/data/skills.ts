@@ -22,13 +22,18 @@ export const SKILLS = [
   {
     title: "CMS & E-commerce",
     description: "Développement et maintenance de solutions clés en main.",
-    techs: ["WordPress", "Prestashop", "Webflow" , "Maintenance"],
+    techs: ["WordPress", "Prestashop", "Webflow"],
     icon: "🚀",
   },
   {
     title: "SEO & Outils",
     description: "Optimisation de la visibilité et workflow de développement.",
-    techs: ["SEO Technique", "Git / GitHub", "Gestion d'hébergement"],
+    techs: [
+      "SEO Technique",
+      "Git / GitHub",
+      "Gestion d'hébergement",
+      "Maintenance",
+    ],
     icon: "📊",
   },
 ];

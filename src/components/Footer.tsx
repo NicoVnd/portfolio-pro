@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <footer
       ref={ref}
-      className="relative w-full bg-slate-50 dark:bg-gray-950 overflow-hidden"
+      className="relative w-full bg-[#F7F7F8] dark:bg-gray-950 overflow-hidden"
     >
       {/* Gradient separator - subtle transition from contact section */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent"></div>
@@ -37,10 +37,10 @@ const Footer = () => {
           }`}
         >
           {/* Brand */}
-          <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent mb-3">
+          <h3 className="text-2xl font-bold text-[#1F2937] dark:text-white mb-3">
             {ME.name}
           </h3>
-          <p className="text-gray-600 dark:text-gray-400 text-sm mb-8 max-w-md">
+          <p className="text-[#1F2937]/75 dark:text-gray-400 text-sm mb-8 max-w-md">
             {ME.title}
           </p>
 
@@ -59,7 +59,7 @@ const Footer = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-sm font-medium"
+                className="text-[#64748B] dark:text-gray-400 hover:text-[#334155] dark:hover:text-white transition-colors duration-300 text-sm font-medium"
               >
                 {link.name}
               </a>
@@ -81,11 +81,11 @@ const Footer = () => {
               href={ME.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-12 h-12 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 hover:border-blue-500/50 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/10"
+              className="group w-12 h-12 bg-white dark:bg-gray-900/50 border border-[#E5E7EB] dark:border-gray-800 hover:border-[#334155]/50 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-[rgba(15,23,42,0.10)]"
               aria-label="LinkedIn"
             >
               <svg
-                className="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
+                className="w-5 h-5 text-[#64748B] dark:text-gray-400 group-hover:text-[#334155] dark:group-hover:text-white transition-colors"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -96,11 +96,11 @@ const Footer = () => {
               href={ME.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-12 h-12 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 hover:border-blue-500/50 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/10"
+              className="group w-12 h-12 bg-white dark:bg-gray-900/50 border border-[#E5E7EB] dark:border-gray-800 hover:border-[#334155]/50 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-[rgba(15,23,42,0.10)]"
               aria-label="GitHub"
             >
               <svg
-                className="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
+                className="w-5 h-5 text-[#64748B] dark:text-gray-400 group-hover:text-[#334155] dark:group-hover:text-white transition-colors"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >

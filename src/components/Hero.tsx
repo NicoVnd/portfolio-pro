@@ -7,17 +7,16 @@ import { ME } from "@/data/profile";
 const Hero = () => {
   return (
     <section className="relative w-full min-h-screen overflow-hidden flex flex-col items-center justify-center text-center px-4">
-      {/* Background gradient effects */}
-      <div className="absolute inset-0 -z-10 bg-slate-50 dark:bg-gray-950">
-        <div className="absolute left-[10%] top-[20%] h-[500px] w-[500px] rounded-full bg-purple-400/20 dark:bg-purple-600/20 blur-[120px] animate-pulse"></div>
-        <div className="absolute right-[10%] bottom-[20%] h-[400px] w-[400px] rounded-full bg-blue-400/20 dark:bg-blue-600/20 blur-[120px] animate-pulse"></div>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[300px] rounded-full bg-indigo-400/10 dark:bg-indigo-600/10 blur-[100px]"></div>
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-[#F7F7F8] dark:bg-gray-950">
+        <div className="absolute left-[10%] top-[20%] h-[500px] w-[500px] rounded-full bg-[rgba(51,65,85,0.06)] blur-[120px]"></div>
+        <div className="absolute right-[10%] bottom-[20%] h-[400px] w-[400px] rounded-full bg-[rgba(51,65,85,0.04)] blur-[120px]"></div>
       </div>
 
       {/* Profile Photo */}
       <div className="relative mb-6 md:mb-8 group animate-scaleIn">
-        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white dark:border-gray-900 shadow-2xl shadow-indigo-500/25">
+        <div className="absolute -inset-1 bg-gradient-to-r from-[#334155] to-[#475569] rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white dark:border-gray-900 shadow-xl shadow-slate-900/10">
           <Image
             src="/profile.jpg"
             alt="Nicolas Vandamme - Développeur Web PHP & Fullstack basé à Lille"
@@ -31,7 +30,7 @@ const Hero = () => {
 
       {/* Badge */}
       <span
-        className="px-5 py-2 rounded-full text-sm font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 mb-8 backdrop-blur-sm animate-fadeInUp delay-100"
+        className="px-5 py-2 rounded-full text-sm font-medium bg-[#334155]/10 text-[#334155] dark:text-slate-300 border border-[#334155]/20 mb-8 backdrop-blur-sm animate-fadeInUp delay-100"
         style={{ opacity: 0, animationFillMode: "forwards" }}
       >
         Ambition : Devenir Développeur Fullstack 🚀
@@ -39,18 +38,18 @@ const Hero = () => {
 
       {/* Main heading */}
       <h1
-        className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-6 animate-fadeInUp delay-200"
+        className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#1F2937] dark:text-white mb-6 animate-fadeInUp delay-200"
         style={{ opacity: 0, animationFillMode: "forwards" }}
       >
         Salut, moi c'est{" "}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500">
+        <span className="text-[#334155]">
           {ME.name}
         </span>
       </h1>
 
       {/* Bio */}
       <p
-        className="max-w-2xl text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 leading-relaxed animate-fadeInUp delay-300"
+        className="max-w-2xl text-lg md:text-xl text-[#1F2937]/80 dark:text-gray-400 mb-12 leading-relaxed animate-fadeInUp delay-300"
         style={{ opacity: 0, animationFillMode: "forwards" }}
       >
         {ME.bio}
@@ -62,17 +61,17 @@ const Hero = () => {
         style={{ opacity: 0, animationFillMode: "forwards" }}
       >
         <a
-          href="#contact"
-          className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-500 hover:to-indigo-500 hover:scale-105 transition-all duration-300 shadow-lg shadow-blue-500/25"
-        >
-          Me contacter
-        </a>
-        <a
           href="/cv-vandamme-nicolas.pdf"
           target="_blank"
-          className="px-8 py-4 bg-white dark:bg-gray-800/50 text-gray-900 dark:text-white font-semibold rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600 hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+          className="px-8 py-4 bg-[#334155] hover:bg-[#1E293B] text-white font-semibold rounded-xl hover:scale-105 transition-all duration-300 shadow-md shadow-slate-900/10"
         >
           Voir mon CV
+        </a>
+        <a
+          href="#projects"
+          className="px-8 py-4 bg-white dark:bg-gray-800/50 text-[#1F2937] dark:text-white font-semibold rounded-xl border border-[#E5E7EB] dark:border-gray-700 hover:bg-[#F7F7F8] dark:hover:bg-gray-800 hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+        >
+          Voir mes Projets
         </a>
       </div>
 

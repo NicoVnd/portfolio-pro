@@ -165,7 +165,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="fr" className="scroll-smooth dark" suppressHydrationWarning>
+    <html lang="fr" className="scroll-smooth" suppressHydrationWarning>
       <head>
         {/* Données structurées JSON-LD pour SEO */}
         <script
@@ -175,6 +175,23 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        {/* Theme initializer — runs before React hydration to avoid FOUC */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var saved = localStorage.getItem('theme');
+                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = saved ? saved : (prefersDark ? 'dark' : 'light');
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              })();
+            `,
+          }}
         />
       </head>
       <body
