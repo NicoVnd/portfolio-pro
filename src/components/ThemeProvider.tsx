@@ -32,9 +32,8 @@ export default function ThemeProvider({
     if (savedTheme) {
       setTheme(savedTheme);
     } else {
-      // Respect OS preference on first visit
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setTheme(prefersDark ? "dark" : "light");
+      // Default to light mode for everyone
+      setTheme("light");
     }
   }, []);
 
