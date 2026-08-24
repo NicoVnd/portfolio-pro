@@ -72,7 +72,7 @@ const DesktopPhotoSection = () => (
       style={{ zIndex: 2 }}
     >
       <Image
-        src="/Nicolas-photo.png"
+        src="/nicolas-photo.png"
         alt="Nicolas Vandamme - Développeur Web"
         fill
         priority
