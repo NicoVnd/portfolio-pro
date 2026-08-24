@@ -72,7 +72,7 @@ const DesktopPhotoSection = () => (
       style={{ zIndex: 2 }}
     >
       <Image
-        src="/profile.jpg"
+        src="/Nicolas-photo.png"
         alt="Nicolas Vandamme - Développeur Web"
         fill
         priority
@@ -98,7 +98,7 @@ const DesktopPhotoSection = () => (
 
     {/* Card 2: Tech stack */}
     <div 
-      className="absolute top-12 lg:-right-14 xl:-right-26 min-[1500px]:-right-24 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md p-3.5 rounded-2xl border border-[#E5E7EB] dark:border-gray-800 shadow-xl shadow-slate-900/10 w-52 animate-fadeInUp z-30 hover:-translate-y-1 transition-transform duration-300"
+      className="absolute top-12 lg:-right-14 xl:-right-20 min-[1500px]:-right-24 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md p-3.5 rounded-2xl border border-[#E5E7EB] dark:border-gray-800 shadow-xl shadow-slate-900/10 w-52 animate-fadeInUp z-30 hover:-translate-y-1 transition-transform duration-300"
       style={{ animationDelay: "700ms", animationFillMode: "forwards" }}
     >
       <div className="flex items-center gap-3 mb-3">
