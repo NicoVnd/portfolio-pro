@@ -4,19 +4,19 @@ export const wysiwygArticles: Project = {
   id: "wysiwyg-articles",
   title: "Plateforme de Rédaction d'Articles",
   description:
-    "Plateforme de rédaction d'articles avec éditeur WYSIWYG et variables dynamiques personnalisées. Réalisé dans le cadre d'un test technique.",
-  fullDescription: `Plateforme de rédaction d'articles développée dans le cadre d'un test technique.
+    "Application web de rédaction d'articles avec éditeur WYSIWYG interactif et variables dynamiques personnalisées (Laravel & Vue.js).",
+  fullDescription: `Plateforme de rédaction d'articles développée en projet personnel pour explorer l'intégration avancée d'éditeurs riches avec Laravel et Vue.js.
 
 L'application permet aux rédacteurs de créer et modifier des articles via un éditeur WYSIWYG complet (Quill.js). Une fonctionnalité originale permet d'insérer des variables dynamiques comme {{nom_utilisateur}} ou {{date_lecture}}, qui sont automatiquement remplacées lors de la lecture par les informations du lecteur.
 
 Le système gère deux rôles distincts : les rédacteurs qui peuvent créer et modifier des articles, et les utilisateurs classiques en lecture seule.
 
 L'interface propose une page d'accueil listant tous les articles, une page de lecture avec remplacement automatique des variables, et un éditeur complet pour la rédaction.`,
-  context: "Test technique professionnel (durée 1 semaine) pour valider des compétences Fullstack Laravel & Vue.js.",
-  problem: "Offrir un éditeur riche WYSIWYG capable de traiter en temps réel l'injection de variables dynamiques contextuelles.",
-  solution: "Développement d'un SPA Vue 3 couplée à une API Laravel, intégrant Quill.js et un parser custom de balises dynamiques.",
-  result: "Test technique réussi avec les félicitations pour la qualité du code, de l'architecture et du respect du CDC.",
-  type: "professional",
+  context: "Projet personnel d'exploration technique Fullstack combinant Laravel et Vue 3 avec intégration d'éditeur riche.",
+  problem: "Offrir un éditeur riche WYSIWYG capable de traiter en temps réel l'injection et le rendu de variables dynamiques contextuelles.",
+  solution: "Développement d'une SPA Vue 3 couplée à une API REST Laravel, intégrant Quill.js et un parser custom de balises dynamiques.",
+  result: "Application fonctionnelle et modulable offrant une expérience de rédaction fluide et une personnalisation du contenu en temps réel.",
+  type: "personal",
   tags: ["Laravel", "Vue.js", "Tailwind CSS", "MySQL", "Quill.js"],
   learned: [
     "Intégration Laravel + Vue.js",

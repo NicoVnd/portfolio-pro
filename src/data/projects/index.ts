@@ -22,7 +22,7 @@ export const PROJECTS: Project[] = [
   andersontech, // Pro - Alternance Développeur Web & SEO
   commeUnGrand, // Pro - Alternance Agence Web
   pokebio, // École - Projet pluridisciplinaire
-  wysiwygArticles, // Test technique Laravel + Vue
+  wysiwygArticles, // Projet personnel Laravel + Vue
   mangaHub, // Projet personnel
 ];
 
