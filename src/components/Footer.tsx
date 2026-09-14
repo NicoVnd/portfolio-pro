@@ -124,15 +124,7 @@ const Footer = () => {
             }}
           >
             <p className="text-gray-500 dark:text-gray-500 text-sm">
-              © {currentYear} {ME.name}
-            </p>
-            <span className="hidden sm:inline text-gray-300 dark:text-gray-700">
-              •
-            </span>
-            <p className="text-gray-400 dark:text-gray-600 text-sm flex items-center gap-1.5">
-              Fait avec
-              <span className="text-red-500 text-xs">❤️</span>
-              Next.js & Tailwind
+              © {currentYear} {ME.name} · Tous droits réservés
             </p>
           </div>
         </div>

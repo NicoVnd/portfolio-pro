@@ -8,7 +8,7 @@ import { pokebio } from "./pokebio";
 import { commeUnGrand } from "./comme-un-grand";
 import { andersontech } from "./andersontech";
 import { wysiwygArticles } from "./wysiwyg-articles";
-import { mangaHub } from "./manga-hub";
+import { mangaShelf } from "./mangashelf";
 import { shake } from "./shake";
 
 // Import type for array typing
@@ -23,7 +23,7 @@ export const PROJECTS: Project[] = [
   commeUnGrand, // Pro - Alternance Agence Web
   pokebio, // École - Projet pluridisciplinaire
   wysiwygArticles, // Projet personnel Laravel + Vue
-  mangaHub, // Projet personnel
+  mangaShelf, // Projet personnel - Collection de mangas
 ];
 
 // Re-export individual projects for direct imports if needed
@@ -35,5 +35,5 @@ export {
   commeUnGrand,
   andersontech,
   wysiwygArticles,
-  mangaHub,
+  mangaShelf,
 };

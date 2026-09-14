@@ -102,18 +102,6 @@ const DesktopPhotoSection = () => (
       style={{ animationDelay: "700ms", animationFillMode: "forwards" }}
     >
       <div className="flex items-center gap-3 mb-3">
-        <div className="w-8 h-8 rounded-lg bg-[rgba(37,99,235,0.09)] flex items-center justify-center shrink-0">
-          <svg className="w-4 h-4 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-        </div>
-        <div>
-          <div className="text-xs font-semibold text-[#1F2937] dark:text-white">CMS</div>
-          <div className="tech-tag text-[10px] text-[#64748B] dark:text-gray-400">WordPress / Prestashop</div>
-        </div>
-      </div>
-
-      <div className="flex items-center gap-3 mb-3">
         <div className="w-8 h-8 rounded-lg bg-[rgba(124,58,237,0.09)] flex items-center justify-center shrink-0">
           <svg className="w-4 h-4 text-[#7C3AED]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2-2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
@@ -125,7 +113,7 @@ const DesktopPhotoSection = () => (
         </div>
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 mb-3">
         <div className="w-8 h-8 rounded-lg bg-[rgba(5,150,105,0.09)] flex items-center justify-center shrink-0">
           <svg className="w-4 h-4 text-[#059669]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -134,6 +122,18 @@ const DesktopPhotoSection = () => (
         <div>
           <div className="text-xs font-semibold text-[#1F2937] dark:text-white">Frontend</div>
           <div className="tech-tag text-[10px] text-[#64748B] dark:text-gray-400">HTML / JS / React</div>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-3">
+        <div className="w-8 h-8 rounded-lg bg-[rgba(37,99,235,0.09)] flex items-center justify-center shrink-0">
+          <svg className="w-4 h-4 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <div>
+          <div className="text-xs font-semibold text-[#1F2937] dark:text-white">CMS</div>
+          <div className="tech-tag text-[10px] text-[#64748B] dark:text-gray-400">WordPress / Prestashop</div>
         </div>
       </div>
     </div>
@@ -199,10 +199,10 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className="px-7 py-3.5 bg-white dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-700 hover:bg-[#F1F5F9] dark:hover:bg-gray-800 text-[#334155] dark:text-slate-200 font-semibold text-base rounded-xl transition-all duration-200 flex items-center justify-center gap-2 hover:-translate-y-0.5"
               >
+                <span>Voir mon CV</span>
                 <svg className="w-4 h-4 text-[#475569] dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-                <span>Télécharger mon CV</span>
               </a>
             </div>
 

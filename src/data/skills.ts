@@ -11,10 +11,11 @@ export const SKILLS = [
     description:
       "Création d'interfaces modernes, réactives et centrées sur l'UX.",
     techs: [
+      "HTML / CSS",
       "JavaScript",
       "Tailwind CSS",
-      "React/Next.js",
       "Bootstrap",
+      "React/Next.js",
       "Figma",
     ],
     icon: "🎨",
@@ -33,6 +34,7 @@ export const SKILLS = [
       "Git / GitHub",
       "Gestion d'hébergement",
       "Maintenance",
+      "Outils IA",
     ],
     icon: "📊",
   },

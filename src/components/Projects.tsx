@@ -28,6 +28,7 @@ const STOP_WORDS = new Set(["de", "du", "des", "le", "la", "les", "d", "l", "un"
 function getProjectInitials(title: string): string {
   const words = title
     .replace(/['’]/g, " ")
+    .replace(/([a-z])([A-Z])/g, "$1 $2") // Split PascalCase (e.g. MangaShelf → Manga Shelf)
     .replace(/[^a-zA-Z0-9\s]/g, " ")
     .split(/\s+/)
     .filter(Boolean);
