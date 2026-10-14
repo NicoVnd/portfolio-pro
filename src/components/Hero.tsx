@@ -18,7 +18,7 @@ const MobilePhotoSection = () => (
         style={{ zIndex: 2 }}
       >
         <Image
-          src="/profile.jpg"
+          src="/nicolas-photo.png"
           alt="Nicolas Vandamme - Développeur Web"
           fill
           priority

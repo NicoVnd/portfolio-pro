@@ -10,6 +10,7 @@ import { andersontech } from "./andersontech";
 import { wysiwygArticles } from "./wysiwyg-articles";
 import { mangaShelf } from "./mangashelf";
 import { shake } from "./shake";
+import { eatList } from "./eatlist";
 
 // Import type for array typing
 import type { Project } from "./types";
@@ -22,6 +23,7 @@ export const PROJECTS: Project[] = [
   andersontech, // Pro - Alternance Développeur Web & SEO
   commeUnGrand, // Pro - Alternance Agence Web
   pokebio, // École - Projet pluridisciplinaire
+  eatList, // Projet personnel - Organisation collaborative du foyer
   wysiwygArticles, // Projet personnel Laravel + Vue
   mangaShelf, // Projet personnel - Collection de mangas
 ];
@@ -36,4 +38,5 @@ export {
   andersontech,
   wysiwygArticles,
   mangaShelf,
+  eatList,
 };

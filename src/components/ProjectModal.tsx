@@ -79,7 +79,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         {/* Mobile Header - Fixed */}
         <div className="md:hidden sticky top-0 z-20 flex items-center justify-between px-4 py-3 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-[#E5E7EB] dark:border-gray-800">
           <div className="flex items-center gap-3 min-w-0">
-            {project.logo && (
+            {project.logo && project.showLogoInModal !== false && (
               <img
                 src={project.logo}
                 alt={`Logo ${project.title}`}
@@ -342,7 +342,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               {/* Title & Actions - Desktop only */}
               <div className="hidden md:flex items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  {project.logo && (
+                  {project.logo && project.showLogoInModal !== false && (
                     <img
                       src={project.logo}
                       alt={`Logo ${project.title}`}

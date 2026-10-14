@@ -18,6 +18,7 @@ export interface Project {
   teamSize?: number;
   duration?: string;
   logo?: string;
+  showLogoInModal?: boolean;
   status?: string;
   imagePosition?: "cover" | "contain" | "top" | "bottom";
   galleryLabels?: string[];

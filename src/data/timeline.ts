@@ -1,8 +1,22 @@
-export const TIMELINE = [
+interface TimelineItem {
+  type: "work" | "education";
+  title: string;
+  company: string;
+  period: string;
+  details: string[];
+  education?: {
+    title: string;
+    company: string;
+    period: string;
+    details: string[];
+  };
+}
+
+export const TIMELINE: TimelineItem[] = [
   {
     type: "work",
-    title: "Développeur Web (CDD)",
-    company: "SHAKE | LILLE",
+    title: "Développeur PHP / CMS (CDD)",
+    company: "SHAKE | VILLENEUVE D’ASCQ",
     period: "Février 2026 – Août 2026",
     details: [
       "Développement de sites web sur mesure en fonction des besoins et contraintes des différents projets clients.",
@@ -14,29 +28,28 @@ export const TIMELINE = [
   },
   {
     type: "work",
-    title: "Alternant Développeur Web & SEO",
+    title: "Développeur PHP / WordPress (Alternance)",
     company: "ANDERSONTECH | LILLE",
-    period: "Octobre 2024 – Septembre 2025",
+    period: "Octobre 2024 – Octobre 2025",
     details: [
       "Développement de fonctionnalités dynamiques en PHP/MySQL pour répondre aux besoins spécifiques des projets web.",
       "Conception, refonte et maintenance de sites web, principalement sous WordPress.",
       "Intervention sur le développement et l’évolution des sites afin d’adapter leurs fonctionnalités aux besoins des projets.",
       "Participation à l’optimisation du référencement naturel à travers les contenus, le développement de backlinks et l’amélioration de la visibilité des sites.",
     ],
-  },
-  {
-    type: "education",
-    title: "Expert Architecte Web (Bac +5)",
-    company: "Digital School | PARIS",
-    period: "Octobre 2024 – Octobre 2025",
-    details: [
-      "Titre RNCP niveau 7 réalisé en alternance.",
-      "Formation approfondie en développement web et en stratégie de transformation digitale.",
-    ],
+    education: {
+      title: "Expert Architecte Web (Bac +5)",
+      company: "Digital School | PARIS",
+      period: "Octobre 2024 – Octobre 2025",
+      details: [
+        "Titre RNCP niveau 7 réalisé en alternance.",
+        "Formation approfondie en développement web et en stratégie de transformation digitale.",
+      ],
+    },
   },
   {
     type: "work",
-    title: "Alternant Développeur Web",
+    title: "Développeur PHP / WordPress (Alternance)",
     company: "COMME UN GRAND | VILLENEUVE D’ASCQ",
     period: "Septembre 2022 – Octobre 2024",
     details: [
@@ -46,20 +59,19 @@ export const TIMELINE = [
       "Maintenance des sites, gestion de l’hébergement et résolution des problématiques techniques rencontrées.",
       "Recueil et analyse des besoins clients afin de proposer des solutions adaptées aux contraintes des projets.",
     ],
-  },
-  {
-    type: "education",
-    title: "Consultant Développeur Digital Web et Mobile (Bac +4)",
-    company: "Digital School | PARIS",
-    period: "Octobre 2022 – Septembre 2024",
-    details: [
-      "Titre RNCP niveau 6 réalisé en alternance.",
-      "Formation en développement web, conception d’applications et gestion de projets digitaux.",
-    ],
+    education: {
+      title: "Consultant Développeur Digital Web et Mobile (Bac +4)",
+      company: "Digital School | PARIS",
+      period: "Octobre 2022 – Septembre 2024",
+      details: [
+        "Titre RNCP niveau 6 réalisé en alternance.",
+        "Formation en développement web, conception d’applications et gestion de projets digitaux.",
+      ],
+    },
   },
   {
     type: "work",
-    title: "Stage Développeur Web",
+    title: "Développeur Web (Stage)",
     company: "COMME UN GRAND | VILLENEUVE D’ASCQ",
     period: "Mai 2021 & Avril 2022",
     details: [
