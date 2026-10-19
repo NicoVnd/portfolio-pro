@@ -11,21 +11,24 @@ import { wysiwygArticles } from "./wysiwyg-articles";
 import { mangaShelf } from "./mangashelf";
 import { shake } from "./shake";
 import { eatList } from "./eatlist";
+import { basketMetrics } from "./basketmetrics";
 
 // Import type for array typing
 import type { Project } from "./types";
 
-// Export combined array - ordered by importance (most important first)
+// Priorité : richesse technique, usages concrets et expérience professionnelle.
+// Les filtres conservent cet ordre au sein de chaque catégorie.
 export const PROJECTS: Project[] = [
-  shake, // CDD Agence SHAKE (Dernière expérience pro avec 5 sites réels)
   thetiptop, // Master 2 (Projet de fin d'études complet, 7 mois, DevOps)
+  basketMetrics, // Symfony, métier, imports OCR et statistiques (en développement)
+  shake, // Expérience en agence avec plusieurs sites clients publiés
+  eatList, // Application collaborative complète, temps réel et PostgreSQL RLS
   atypikhouse, // Master 1 (Projet complet 6 mois)
-  andersontech, // Pro - Alternance Développeur Web & SEO
   commeUnGrand, // Pro - Alternance Agence Web
-  pokebio, // École - Projet pluridisciplinaire
-  eatList, // Projet personnel - Organisation collaborative du foyer
+  andersontech, // Pro - Alternance Développeur Web & SEO
   wysiwygArticles, // Projet personnel Laravel + Vue
-  mangaShelf, // Projet personnel - Collection de mangas
+  pokebio, // Projet scolaire court et pluridisciplinaire
+  mangaShelf, // Projet en développement, finalisation prévue plus tard
 ];
 
 // Re-export individual projects for direct imports if needed
@@ -39,4 +42,5 @@ export {
   wysiwygArticles,
   mangaShelf,
   eatList,
+  basketMetrics,
 };
